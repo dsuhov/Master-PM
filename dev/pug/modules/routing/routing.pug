@@ -1,0 +1,14 @@
+include ../buttons/buttons
+
+.routing
+  h1.routing__heading.futpt-medium-60-66 Для чего Вам нужна система управления печатью?
+  p.routing__text.futpt-normal-18-25 Чтобы каждый посетитель сайта получил <br>нужную ему информацию, мы подготовили 3 <br>разных страницы. Ответьте на вопрос, <br>чтобы перейте на свою страницу.
+  ul.routing__buttons
+    li.routing__button
+      +turquoise-btn('сократить расходы <br>на печать', 'routing-cut-costs', '#commercial')
+    li.routing__button
+      +turquoise-btn('оптимизировать <br>процессы печати', 'routing-optimize-print-costs', '#it')
+    li.routing__button
+      +turquoise-btn('защитить документы <br>от утечки', 'routing-protect-documents', '#security')
+  .routing__all
+    a(href="all.html").routing__all-link.futpt-normal-18-25 Мне нужно всё

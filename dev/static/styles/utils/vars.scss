@@ -1,0 +1,27 @@
+// Colors
+$white: #ffffff;
+$black: #000000;
+$tuna: #33363E; //main font color
+$zumthor: #E8EEFF;
+$royal-blue: #2F7EEF;
+$base-text: #333333;
+$picton-blue: #47D1F2;
+
+
+// Sizes
+$base-font-size: 18px;
+
+$breakpoints: (
+  "phone"       : 400px,
+  "phone-wide"  : 480px,
+  "phablet"     : 560px,
+  "tablet-small": 640px,
+  "tablet"      : 768px,
+  "tablet-wide" : 1024px,
+  "desktop"     : 1248px,
+  "desktop-wide": 1440px
+);
+
+$content-size: 1200px;
+
+// Fonts

@@ -1,0 +1,118 @@
+.burger {
+  position: relative;
+  width: 20px;
+  height: 14px;
+  cursor: pointer;
+
+  & > * {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    border-radius: 1px;
+  }
+
+  &__top, &__bottom, &__middle {
+    transform-origin: center;
+    transition: background-color 0.15s ease-in-out;
+  }
+
+
+  &__top {
+    top: 0;
+  }
+
+  &__middle {
+    top: calc(50% - 1px);
+    transition: opacity 0.1s linear;
+  }
+
+  &__bottom {
+    bottom: 0;
+  }
+
+  &.burger--active {
+    position: relative;
+    z-index: 15;
+  }
+
+  &.burger--active &__top {
+    background-color: $royal-blue;
+    animation: burgerAnimActiveTop 0.3s ease-in-out forwards;
+  }
+
+  &.burger--active &__bottom {
+    background-color: $royal-blue;
+    animation: burgerAnimActiveBottom 0.3s ease-in-out forwards;
+  }
+
+  &.burger--active &__middle {
+    opacity: 0;
+  }
+
+  &.burger--reverse &__top {
+    animation: burgerAnimReverseTop 0.3s ease-in-out forwards;
+  }
+
+  &.burger--reverse &__bottom {
+    animation: burgerAnimReverseBottom 0.3s ease-in-out forwards;
+  }
+}
+
+@keyframes burgerAnimActiveTop {
+  50% {
+    transform: translateY(6px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(6px) rotate(-45deg);
+    border-radius: 0;
+  }
+}
+
+@keyframes burgerAnimActiveBottom {
+  50% {
+    transform: translateY(-6px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-6px) rotate(45deg);
+    border-radius: 0;
+  }
+}
+
+
+@keyframes burgerAnimReverseTop {
+  0% {
+    transform: translateY(6px) rotate(-45deg);
+    
+    border-radius: 0;
+  }
+
+  50% {
+    transform: translateY(6px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+    border-radius: 1px;
+  }
+}
+
+@keyframes burgerAnimReverseBottom {
+  0% {
+    transform: translateY(-6px) rotate(45deg);
+    
+    border-radius: 0;
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+    border-radius: 1px;
+  }
+}

@@ -1,0 +1,49 @@
+.top-line {
+  max-width: 1348px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  &__navigation {
+    margin-left: auto;
+  }
+
+  &__mobile-nav {
+    display: none;
+    
+    width: 64px;
+    height: 64px;
+
+    border: 2px solid rgba($zumthor, 0.2);
+    border-radius: 50%;
+
+    transition: border 0.2s linear;
+
+    &:hover {
+      border: 2px solid rgba($zumthor, 0.6);
+    }
+
+    @media (max-width: 1280px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      width: 58px;
+      height: 58px;
+    }
+
+    @media (max-width: 365px) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &__phone {
+    @media (max-width: 1280px) {
+      margin-left: auto;
+    }
+  }
+}

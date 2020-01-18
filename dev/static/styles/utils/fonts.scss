@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Futura PT Bold';
+  src: local('Futura PT Bold'), local('FuturaPT-Bold'),
+      url('../fonts/subset-FuturaPT-Bold.woff2') format('woff2'),
+      url('../fonts/subset-FuturaPT-Bold.woff') format('woff'),
+      url('../fonts/subset-FuturaPT-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT Demi';
+  src: local('Futura PT Demi'), local('FuturaPT-Demi'),
+      url('../fonts/subset-FuturaPT-Demi.woff2') format('woff2'),
+      url('../fonts/subset-FuturaPT-Demi.woff') format('woff'),
+      url('../fonts/subset-FuturaPT-Demi.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT Book';
+  src: local('Futura PT Book'), local('FuturaPT-Book'),
+      url('../fonts/subset-FuturaPT-Book.woff2') format('woff2'),
+      url('../fonts/subset-FuturaPT-Book.woff') format('woff'),
+      url('../fonts/subset-FuturaPT-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: local('Futura PT Medium'), local('FuturaPT-Medium'),
+      url('../fonts/subset-FuturaPT-Medium.woff2') format('woff2'),
+      url('../fonts/subset-FuturaPT-Medium.woff') format('woff'),
+      url('../fonts/subset-FuturaPT-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-Bold'),
+      url('../fonts/subset-Gilroy-Bold.woff2') format('woff2'),
+      url('../fonts/subset-Gilroy-Bold.woff') format('woff'),
+      url('../fonts/subset-Gilroy-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

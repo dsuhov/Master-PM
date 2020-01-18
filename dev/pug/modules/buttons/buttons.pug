@@ -1,0 +1,8 @@
+mixin faint-border-btn(name, id)
+  if id
+    button(class="faint-border-btn" id=`${id}`)!= name
+  else
+    button(class="faint-border-btn")!= name
+
+mixin turquoise-btn(text, id, link)
+  a(href=""+link id=""+id class="turquoise-btn futpt-demi-14-18--uppercase")!= text

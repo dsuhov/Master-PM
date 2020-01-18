@@ -1,0 +1,48 @@
+.sectioning {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background: url('../images/general/segmn-desktop_x1.jpg') no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  @media screen and (min-resolution: 192dpi) {
+    background: url('../images/general/segmn-desktop_x15.jpg') no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+
+  &__top-line {
+    padding-top: 25px;
+    flex-grow: 0;
+
+    @media (max-width: 1350px) {
+      padding: 0 28px;
+      padding-top: 25px;
+    }
+
+    @media (max-width: 1280px) {
+      padding-top: 19px;
+    }
+
+    @media (max-width: 400px) {
+      padding: 0px 27px;
+      padding-top: 17px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__main {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 400px) {
+      display: block;
+      padding: 0 30px;
+    }
+  }
+}

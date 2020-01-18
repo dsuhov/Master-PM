@@ -1,0 +1,46 @@
+.gilroy-bold-20-24 {
+  font-family: 'Gilroy';
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: $white;
+}
+
+.futpt-medium-60-66 {
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 66px;  
+  color: $white;
+
+  @media (max-width: 400px) {
+    font-size: 30px;
+    line-height: 33px;
+  }
+}
+
+.futpt-normal-18-25 {
+  font-family: 'Futura PT Book';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: $white;
+}
+
+.futpt-demi-14-18 {
+  font-family: 'Futura PT Demi';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: $white;
+}
+
+.futpt-demi-14-18--uppercase {
+  font-family: 'Futura PT Demi';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: $white;
+  text-transform: uppercase;
+}

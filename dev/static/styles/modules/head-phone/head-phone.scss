@@ -1,0 +1,55 @@
+.head-phone {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border: 2px solid rgba($zumthor, 0.2);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s linear;
+    transition-property: border, background, box-shadow;
+
+    margin-right: 11px;
+
+    @media (max-width: 768px) {
+      width: 58px;
+      height: 58px;
+      margin-right: 14px;
+    }
+
+    @media (max-width: 365px) {
+      width: 46px;
+      height: 46px;
+      margin-right: 10px;
+    }
+  }
+
+  &:hover &__icon {
+    border: 2px solid rgba($zumthor, 0);
+    background: #3FC4E3;
+
+    @media (max-width: 1280px) {
+      border: 2px solid rgba($zumthor, 0.2);
+      background: transparent;
+    }
+  }
+
+  &__number {
+    @media (max-width: 1280px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    margin-right: 14px;
+  }
+
+  @media (max-width: 400px) {
+    margin-right: 0;
+  }
+}
