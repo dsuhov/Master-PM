@@ -1,0 +1,29 @@
+.header-feature {
+  background-color: $white;
+  width: 285px;
+  box-shadow: 0px 0px 80px rgba(30, 64, 112, 0.35);
+  border-radius: 20px;
+  padding: 40px 30px 20px;
+
+  &__icon {
+    width: 76px;
+    height: 76px;
+    background-color: $royal-blue;
+    border-radius: 50%;
+    box-shadow: 0px 12px 24px rgba(57, 138, 241, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    svg {
+      fill: $white;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+
+}

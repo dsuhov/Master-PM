@@ -1,0 +1,28 @@
+mixin economy-card(value, order, text, balloon)
+  li.economy-card(data-value=""+value data-ballon=""+balloon)
+    p.economy-card__text.futpt-normal-18-25.futpt-normal-18-25--tuna
+      b.economy-card__order!= order
+      span!= text
+    //- .economy-card__hidden-data.futpt-normal-18-25.futpt-normal-18-25--tuna 
+
+.economy
+  .container.economy__content
+    .economy__left-side
+      h2.economy__title.futpt-demi-50-55 <span class="em-blue">Вы экономите от 25%</span> <br>за счет сокращения <br>нецелевой печати <br>и снижения издержек
+      ul.economy__cards
+        +economy-card([100, 80], '01. ', 'Отслеживание и запрет распечатывать личные документы типа рефератов, билетов или книг.', 'Отслеживание и запрет распечатывать личные документы в среднем позволяет <b>сократить расходы на 10%</b>')
+        +economy-card([90, 60], '02. ', 'Отказ от дорогостоящей цветной печати если в этом нет необходимости.', 'Отказ от дорогостоящей цветной печати если в этом нет необходимости.')
+        +economy-card([85, 65], '03. ', 'Экономная печать на обеих сторонах бумаги в подходящих случаях.', 'Экономная печать на обеих сторонах бумаги в подходящих случаях.')
+        +economy-card([95, 75], '04. ', 'Экономия времени сотрудников за счет упрощения печати доступных им документов.', 'Экономия времени сотрудников за счет упрощения печати доступных им документов.')
+        +economy-card([80, 60], '05. ', 'Отслеживание махинаций сотрудников типа перезаправки совместимых картриджей вместо покупки оригинальных.', 'Отслеживание махинаций сотрудников типа перезаправки совместимых картриджей вместо покупки оригинальных.')
+        +economy-card([98, 76], '06. ', 'Определение завышенных счетов от аутсорсеров печати, если Вы пользуетесь их услугами.', 'Определение завышенных счетов от аутсорсеров печати, если Вы пользуетесь их услугами.')
+    .economy__right-side
+      .blue-columns
+        .blue-columns__side-note Расходы на печать
+        .blue-columns__column#blue-columns__column-1
+          .blue-columns__inner-column-outer
+            .blue-columns__inner-column-inner
+        .blue-columns__column#blue-columns__column-2
+          .blue-columns__inner-column-outer
+            .blue-columns__inner-column-inner
+              .blue-columns__balloon#column-ballon Отслеживание и запрет распечатывать личные документы в среднем позволяет <b>сократить расходы на 10%</b>

@@ -1,0 +1,41 @@
+.economy {
+  padding-top: 164px;
+  
+
+  &__title {
+    margin-bottom: 63px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-side {
+    flex: 0 1 620px;
+  }
+
+  &__right-side {
+    // background-color: rgba(112, 122, 132, 0.1);
+    flex: 0 0 386px;
+  }
+
+  &__title {
+    max-width: 620px;
+  }
+
+  &__cards {
+    max-width: 590px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & > * {
+      width: calc(50% - 10px);
+    }
+  }
+}
+
+@import "economy-card";
+@import "blue-columns";
+@import "column-balloon";

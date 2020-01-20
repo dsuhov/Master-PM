@@ -4,5 +4,20 @@ mixin faint-border-btn(name, id)
   else
     button(class="faint-border-btn")!= name
 
-mixin turquoise-btn(text, id, link)
-  a(href=""+link id=""+id class="turquoise-btn futpt-demi-14-18--uppercase")!= text
+mixin faint-border-btn-64(name, id)
+  if id
+    button(class="faint-border-btn faint-border-btn--64" id=`${id}`)!= name
+  else
+    button(class="faint-border-btn faint-border-btn--64")!= name
+
+mixin turquoise-btn(text, id, link, button)
+  if button
+    button(id=""+id class="turquoise-btn futpt-demi-14-18--uppercase")!= text
+  else
+    a(href=""+link id=""+id class="turquoise-btn futpt-demi-14-18--uppercase")!= text
+
+mixin turquoise-btn-72(text, id, link, button)
+  if button
+    button(id=""+id class="turquoise-btn turquoise-btn--72 futpt-demi-14-18--uppercase")!= text
+  else
+    a(href=""+link id=""+id class="turquoise-btn futpt-demi-14-18--uppercase")!= text

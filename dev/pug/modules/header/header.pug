@@ -1,5 +1,22 @@
+include ../buttons/buttons
+include ../components/pale-circle
+
 header.header
   .header__navigation
-    include ../top-line/top-line
-  // навигация
-  // прочее
+    include ../top-line/top-line-main
+  .container
+    .header__main
+      h1.header__title.futpt-medium-60-66 За 15-20 дней <br>внедрим современную <br>систему управления <br>печатью по картам
+      .header__low-block
+        .header__lb-left-side
+          span.header__subtitle.futpt-normal-18-25 которая сократит расходы на печать на 20-50% <br>и сделает эффективней контроль за ней
+          .header__lb-button-block
+            .header__lb-button
+              +turquoise-btn-72('Подобрать решение', 'header-btn', '', true)
+            p.header__lb-btn-rtext.futpt-normal-18-25 5 проверенных решений из которых <br>мы подберем оптимальный вариант <br>для вашей компании
+        .header__lb-right-side
+          .header__lb-icon
+            +pale-circle('printer')
+          p.header__lb-partners.futpt-normal-18-25 Работаем с устройствами почти всех брендов: HP, Ricoh, Kyocera, Xerox, Konica Minolta, Canon, Brother, Lexmark, Epson
+    .header__features
+      include ../header-features/header-features

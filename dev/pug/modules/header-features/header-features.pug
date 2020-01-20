@@ -1,0 +1,11 @@
+mixin header-feature(icon, text)
+  .header-feature
+    .header-feature__icon
+      +icon(icon)
+    p.header-feature__text.futpt-normal-18-25.futpt-normal-18-25--tuna!= text
+
+.header-features
+  +header-feature('history', '30 дней бесплатного теста <br>без ограничений по <br>функциональности')
+  +header-feature('piggybank', 'На 10-15% дешевле, <br>чем у в других компаниях <br>за счет дисконта от <br>вендоров, с которыми <br>работаем с 2004 года')
+  +header-feature('event', '12 месяцев гарантии <br>и круглосуточная <br>техническая поддержка в <br>любой точке России')
+  +header-feature('browser', 'Подберем подходящий софт, <br>поставим лицензию <br>и удаленно все настроим')

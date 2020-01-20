@@ -1,0 +1,11 @@
+.header-features {
+  min-height: 313px;
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    width: 23.75%;
+  }
+}
+
+@import "header-feature";

@@ -1,0 +1,15 @@
+.pale-circle {
+  width: 76px;
+  height: 76px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon-printer {
+    width: 23px;
+    height: 23px;
+  }
+}

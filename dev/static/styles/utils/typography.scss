@@ -26,6 +26,10 @@
   font-size: 18px;
   line-height: 25px;
   color: $white;
+
+  &.futpt-normal-18-25--tuna {
+    color: $tuna;
+  }
 }
 
 .futpt-demi-14-18 {
@@ -43,4 +47,16 @@
   line-height: 18px;
   color: $white;
   text-transform: uppercase;
+}
+
+.futpt-demi-50-55 {
+  font-family: 'Futura PT Demi';
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 55px;
+  color: $tuna;
+
+  .em-blue {
+    color: $royal-blue;
+  }
 }

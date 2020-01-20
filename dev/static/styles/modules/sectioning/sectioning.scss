@@ -14,10 +14,18 @@
   }
 
   &__top-line {
+    &-wrapper {
+      width: 100%;
+    }
+
     padding-top: 25px;
     flex-grow: 0;
+    max-width: 1348px;
+    margin: 0 auto;
 
     @media (max-width: 1350px) {
+      max-width: auto;
+      margin: 0;
       padding: 0 28px;
       padding-top: 25px;
     }

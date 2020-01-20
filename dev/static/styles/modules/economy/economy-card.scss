@@ -1,0 +1,35 @@
+.economy-card {
+  cursor: pointer;
+  background-color: $white;
+  border: 1px solid #DEE3EF;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 20px 30px 10px;
+  min-height: 170px;
+  margin-bottom: 20px;
+
+  transition: 0.2s linear;
+  transition-property: background-color, box-shadow;
+
+  &__text {
+    transition: color 0.2s linear;
+  }
+
+  &__order {
+
+  }
+
+  &.economy-card--active {
+    border: none;
+    background-color: $royal-blue;
+    box-shadow: 0px 24px 48px rgba(47, 126, 239, 0.3);
+  }
+
+  &.economy-card--active &__text {
+    color: $white;
+  }
+
+  &__hidden-data {
+    display: none;
+  }
+}

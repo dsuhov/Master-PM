@@ -6,6 +6,8 @@
 @import "utils/typography";
 @import "utils/icons";
 
+::-webkit-scrollbar { width: 0 !important }
+
 html {
   font-size: $base-font-size;
   line-height: 140%;
@@ -106,6 +108,10 @@ a {
   margin: 0 auto;
   max-width: $content-size;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    padding: 0 28px;
+  }
 }
 
 //Модули
