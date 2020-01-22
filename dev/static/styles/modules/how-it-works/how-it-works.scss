@@ -1,0 +1,70 @@
+.how-it-works {
+  padding-top: 154px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+
+  &__blue-glitter {
+    position: absolute;
+
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    right: 0;
+    top: 0;
+    width: 358px;
+    height: 716px;
+  }
+
+  &__title {
+    max-width: 652px;
+    margin: 0 auto;
+    margin-bottom: 86px;
+    text-align: center;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 160px;
+  }
+
+  &__item {
+    flex: 1 1 50%;
+    margin-bottom: 118px;
+  }
+
+  &__last-item {
+    position: relative;
+    
+  }
+
+  &__background {
+    position: absolute;
+    width: 1920px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 906px;
+    top: -58px;
+    background: url('../images/general/hiw-last-item.svg') top left no-repeat;
+  }
+
+  &__li-content {
+    position: relative;
+    z-index: 20;
+    padding-top: 180px;
+  }
+
+  &__note {
+    padding-top: 42px;
+  }
+
+  &__notik {
+    position: absolute;
+    left: 564px;
+    top: 208px;
+  }
+}
+
+@import "how-it-works-item";
+@import "hiw-note";
+@import "hiw-notik";

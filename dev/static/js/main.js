@@ -2,12 +2,22 @@ $(document).ready(function () {
   svg4everybody({});
   burgerAction();
 
+  new LazyLoad({
+    elements_selector: ".lazy"
+  });
+
   if (document.getElementById('page-sectioning')) {
     console.log('page-sectioning');
   }
 
   if (document.getElementById('page-all')) {
-    economyCardsActions();
+    
+    if (window.matchMedia('(min-width: 951px)').matches) {
+      economyCardsActions();
+    }
+
+    initAOS();
+    initLazyBG();
   }
   
 });
@@ -136,4 +146,23 @@ function economyCardsActions() {
   function setColumnBalloon(rawtext) {
     colBalloon.innerHTML = rawtext;
   }
+}
+
+function initAOS() {
+  AOS.init({
+    // easing: 'ease-in-out-back',
+    duration: 600
+  });
+}
+
+function initLazyBG() {
+
+  var callback_enter = function(element) {
+    console.log(element);
+    
+  };
+
+  new LazyLoad({
+    elements_selector: ".lazyBg"
+  });
 }

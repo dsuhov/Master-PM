@@ -11,6 +11,11 @@
   transition: 0.2s linear;
   transition-property: background-color, box-shadow;
 
+  @media (max-width: 400px) {
+    min-height: 0;
+    padding: 20px 30px 30px;
+  }
+
   &__text {
     transition: color 0.2s linear;
   }

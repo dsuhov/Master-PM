@@ -1,0 +1,197 @@
+.how-it-works-item {
+  position: relative;
+
+  &__img-block {
+    position: absolute;
+  }
+
+  &__lb-count {
+    margin-bottom: 25px;
+  }
+
+  &__lb-heading {
+    max-width: 550px;
+    margin-bottom: 32px;
+  }
+
+  &__lb-descr {
+    max-width: 550px;
+  }
+
+  &__count {
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 55px;
+    color: $royal-blue;
+    margin-bottom: 12px;
+  }
+
+  &__heading {
+    margin-bottom: 26px;
+  }
+
+  &__descr {
+
+  }
+
+  &__aside-info {
+    position: absolute;
+    width: 186px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 48px rgba(76, 103, 134, 0.2);
+    border-radius: 5px;
+    padding: 8px 0 15px 16px;
+
+    span {
+      display: block;
+
+      &:first-child {
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        font-family: 'Futura PT Demi';
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: #c7c7c7;
+      }
+    }
+  }
+
+  &.how-it-works-item--1 {
+    padding-left: 252px;
+    padding-right: 35px;
+
+    .how-it-works-item__img-block {
+      width: 201px;
+      left: -15px;
+      top: 0;
+    }
+  }
+
+  &.how-it-works-item--2 {
+    padding-left: 314px;
+    margin-right: -20px;
+    transform: translateY(228px);
+
+    .how-it-works-item__img-block {
+      width: 230px;
+      left: 46px;
+      top: 6px;
+    }
+  }
+
+  &.how-it-works-item--3 {
+    padding-left: 252px;
+    padding-right: 50px;
+
+    .how-it-works-item__img-block {
+      width: 283px;
+      left: -62px;
+      top: -54px;
+    }
+
+    .how-it-works-item__aside-info {
+      left: 85px;
+      top: 239px;
+    }
+  }
+
+  &.how-it-works-item--4 {
+    padding-left: 316px;
+    // margin-right: -20px;
+    transform: translateY(252px);
+
+    .how-it-works-item__img-block {
+      width: 221px;
+      left: 54px;
+      top: -42px;
+    }
+
+    .how-it-works-item__aside-info {
+      left: -65px;
+      top: 210px;
+    }
+  }
+
+  &__arc {
+    position: absolute;
+
+    .svg-sprite-icon {
+      fill: none;
+      stroke: #CED8FB;
+    }
+  }
+
+  &__arc.how-it-works-item__arc--1 {
+    left: 568px;
+    top: 18px;
+  }
+
+  &__arc.how-it-works-item__arc--2 {
+    left: -180px;
+    top: 128px;
+  }
+
+  &__arc.how-it-works-item__arc--3 {
+    left: 596px;
+    top: 103px;
+  }
+
+  &__arc.how-it-works-item__arc--4 {
+    left: 562px;
+    top: 435px;
+  }
+
+  &__ballon {
+    width: 360px;
+    background-color: $white;
+    box-shadow: 0px 0px 80px rgba(47, 112, 205, 0.12);
+    border-radius: 10px;
+    position: absolute;
+    left: 0px;
+    top: 368px;
+    padding: 30px;
+    padding-top: 20px;
+    padding-right: 20px;
+
+    b {
+      font-family: 'Futura PT Demi';
+      font-weight: 500;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 13px;
+      height: 13px;
+      background-color: $white;
+      border-radius: 2px;
+      transform: rotate(45deg);
+      right: 53px;
+      top: -6px;
+    }
+  }
+}
+
+.icon-arc1 {
+  width: 347px;
+  height: 113px;
+}
+
+.icon-arc2 {
+  width: 148px;
+  height: 71px;
+}
+
+.icon-arc3 {
+  width: 266px;
+  height: 105px;
+}
+
+.icon-arc4 {
+  width: 61px;
+  height: 249px;
+}

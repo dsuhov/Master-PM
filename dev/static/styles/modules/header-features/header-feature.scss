@@ -1,9 +1,17 @@
 .header-feature {
   background-color: $white;
-  width: 285px;
+  // width: 285px;
   box-shadow: 0px 0px 80px rgba(30, 64, 112, 0.35);
   border-radius: 20px;
   padding: 40px 30px 20px;
+
+  @media (max-width: 400px) {
+    padding: 46px 20px 50px 38px;
+
+    br {
+      display: none;
+    }
+  }
 
   &__icon {
     width: 76px;
@@ -22,6 +30,16 @@
       fill: $white;
       width: 40px;
       height: 40px;
+    }
+
+    @media (max-width: 400px) {
+      width: 85px;
+      height: 85px;
+
+      svg {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 

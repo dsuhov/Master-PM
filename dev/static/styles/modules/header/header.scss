@@ -1,6 +1,18 @@
 .header { 
   background: url('../images/general/main-bg_x1.jpg') top center / 1920px auto no-repeat;
 
+  @media (max-width: 768px) {
+    // min-height: ;
+  }
+
+  @media (max-width: 768px) {
+    background: url('../images/general/main-bg-mobile_x1.jpg') top center / 100% auto no-repeat;
+  }
+
+  @media (max-width: 360px) {
+    background: url('../images/general/main-bg-mobile_x1.jpg') top center / 360px auto no-repeat;
+  }
+
   &__navigation {
     padding: 19px 80px 0 68px;
 
@@ -12,20 +24,16 @@
   &__main {
     padding-top: 98px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 768px) {
       padding-top: 38px;
     }
   }
-
-  // &__title {
-
-  // }
 
   &__low-block {
     display: flex;
     justify-content: space-between;
     
-    @media (max-width: 400px) {
+    @media (max-width: 768px) {
       display: block;
     }
   }
@@ -37,7 +45,7 @@
   &__lb-left-side {
     padding-top: 24px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 950px) {
       padding-top: 11px;
       margin-bottom: 56px;
     }
@@ -51,7 +59,7 @@
     display: flex;
     align-items: center;
 
-    @media (max-width: 400px) {
+    @media (max-width: 950px) {
       display: block;
     }
   }
@@ -59,7 +67,7 @@
   &__lb-button {
     margin-right: 33px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 950px) {
       margin-bottom: 22px;
     }
   }
@@ -68,7 +76,7 @@
     display: block;
     margin-bottom: 50px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 950px) {
       max-width: 250px;
       margin-bottom: 56px;
 
@@ -83,7 +91,7 @@
   }
 
   &__lb-btn-rtext {
-    @media (max-width: 400px) {
+    @media (max-width: 950px) {
       padding-left: 22px;
       position: relative;
   
@@ -101,5 +109,9 @@
 
   &__features {
     padding-top: 94px;
+
+    @media (max-width: 950px) {
+      padding-top: 57px;
+    }
   }
 }

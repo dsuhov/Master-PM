@@ -1,0 +1,23 @@
+.hiw-notik {
+  position: relative;
+
+  &__image-bg {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 742px;
+    height: 618px;
+  }
+
+  &__note {
+    position: absolute;
+    top: 258px;
+    left: -41px;
+    z-index: 20;
+
+    max-width: 326px;
+    padding: 26px 21px 34px 34px;
+    background: $white;
+    box-shadow: 0px 0px 80px rgba(47, 112, 205, 0.12);
+    border-radius: 10px;
+  }
+}
