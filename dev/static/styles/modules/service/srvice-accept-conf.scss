@@ -1,0 +1,50 @@
+
+
+.srvice-accept-conf {
+  cursor: pointer;
+  font-family: 'Gilroy';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 160%;
+  color: $white;
+  display: flex;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 16px;
+  }
+
+  .icon-check-square {
+    width: 24px;
+    height: 24px;
+    fill: $white;
+  }
+
+  .icon-ion-checkbox-outline {
+    width: 20px;
+    height: 20px;
+    fill: $white;
+  }
+
+  &__icon--on {
+    display: none;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox:checked ~ &__icon--off {
+    display: none;
+  }
+
+  &__checkbox:checked ~ &__icon--on {
+    display: flex;
+  }
+}

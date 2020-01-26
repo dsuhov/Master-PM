@@ -4,6 +4,14 @@
   overflow: hidden;
   position: relative;
 
+  @media (max-width: 400px) {
+    padding-top: 101px;
+  }
+
+  @media (max-width: 360px) {
+    padding-top: 50px;
+  }
+
   &__blue-glitter {
     position: absolute;
 
@@ -13,6 +21,11 @@
     top: 0;
     width: 358px;
     height: 716px;
+
+    @media (max-width: 400px) {
+      width: 180px;
+      height: 402px;
+    }
   }
 
   &__title {
@@ -20,22 +33,74 @@
     margin: 0 auto;
     margin-bottom: 86px;
     text-align: center;
+    position: relative;
+    z-index: 20;
+
+    @media (max-width: 400px) {
+      margin-bottom: 70px;
+    }
+
+    @media (max-width: 360px) {
+      br {display: none;}
+    }
   }
 
   &__items {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 160px;
+
+    @media (max-width: 1200px) {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    @media (max-width: 560px) {
+      padding-bottom: 90px;
+    }
   }
 
   &__item {
     flex: 1 1 50%;
     margin-bottom: 118px;
+
+    @media (max-width: 400px) {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1200px) {
+      flex: 0 0 60%;
+    }
+
+    @media (max-width: 950px) {
+      flex: 0 0 80%;
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 80%;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 560px) {
+      flex: 0 0 100%;
+      margin-bottom: 0;
+    }
   }
 
   &__last-item {
     position: relative;
     
+    @media (max-width: 560px) {
+      background: url('../images/general/hiw-mob-bg.png') no-repeat;
+      background-size: 100% auto;
+      background-position: top -6px left;
+    }
   }
 
   &__background {
@@ -46,22 +111,82 @@
     min-height: 906px;
     top: -58px;
     background: url('../images/general/hiw-last-item.svg') top left no-repeat;
+
+    @media (max-width: 950px) {
+      transform: translateX(0);
+      left: 0;
+    }
+
+    @media (max-width: 560px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    @media (max-width: 1350px) {
+      padding: 0 20px;
+    }
+
+    @media (max-width: 1200px) {
+      padding: 0;
+    }
   }
 
   &__li-content {
     position: relative;
     z-index: 20;
     padding-top: 180px;
+
+    @media (max-width: 950px) {
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+      padding-left: 20%;
+    }
+
+    @media (max-width: 950px) {
+      padding-left: 10%;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 560px) {
+      padding-left: 0;
+      padding-top: 0;
+      padding-bottom: 70px;
+    }
+
+    
   }
 
   &__note {
     padding-top: 42px;
+
+    @media (max-width: 560px) {
+      padding-top: 28px;
+    }
   }
 
   &__notik {
     position: absolute;
     left: 564px;
     top: 208px;
+
+    @media (max-width: 1350px) {
+      left: 520px;
+    }
+
+    @media (max-width: 950px) {
+      position: static;
+    }
+
+    @media (max-width: 560px) {
+      order: -1;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 320px) {
+      margin-bottom: 40px;
+    }
   }
 }
 

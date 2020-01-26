@@ -47,3 +47,14 @@
   font-weight: bold;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy-Regular'),
+      url('../fonts/subset-Gilroy-Regular.woff2') format('woff2'),
+      url('../fonts/subset-Gilroy-Regular.woff') format('woff'),
+      url('../fonts/subset-Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

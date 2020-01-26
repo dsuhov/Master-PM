@@ -150,8 +150,10 @@ function economyCardsActions() {
 
 function initAOS() {
   AOS.init({
-    // easing: 'ease-in-out-back',
-    duration: 600
+    duration: 600,
+    disable: () => {
+      return window.matchMedia('(min-width: 768px)').matches ? false : true;
+    }
   });
 }
 

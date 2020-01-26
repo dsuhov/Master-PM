@@ -6,7 +6,10 @@ block variables
 
 block content
 	include ./modules/header/header
-	include ./modules/economy/economy
-	include ./modules/how-it-works/how-it-works
+	div(style="display: none")
+		include ./modules/economy/economy
+		include ./modules/how-it-works/how-it-works
+	div(style="display: none")
+	include ./modules/service/service
 	.dummy(style="height: 500px; background-color: #ccc")
 	//- include ../modules/footer/footer

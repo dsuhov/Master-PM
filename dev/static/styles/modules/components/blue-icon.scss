@@ -1,0 +1,35 @@
+.blue-icon {
+  width: 76px;
+  height: 76px;
+  background-color: $royal-blue;
+  border-radius: 50%;
+  box-shadow: 0px 12px 24px rgba(57, 138, 241, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .svg-sprite-icon {
+    fill: $white;
+  }
+
+  .icon-global {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-exam {
+    width: 30px;
+    height: 40px;
+  }
+
+  .icon-teacher {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}

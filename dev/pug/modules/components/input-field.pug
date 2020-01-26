@@ -1,0 +1,10 @@
+mixin input-field(inpFieldData)
+  if inpFieldData.type === 'tel'
+    .input-field-block
+      input(
+        type=`${inpFieldData.type}` 
+        id=`${inpFieldData.id}` 
+        name='telephone' 
+        class=`input-field input-field--${inpFieldData.classModifier}`
+        placeholder=`${inpFieldData.placeholder}`
+      )

@@ -1,12 +1,31 @@
 .how-it-works-item {
   position: relative;
 
+  @media (max-width: 400px) {
+    // position: static;
+  }
+
   &__img-block {
     position: absolute;
+
+    @media (max-width: 560px) {
+      position: static;
+    }
   }
 
   &__lb-count {
     margin-bottom: 25px;
+
+    @media (max-width: 560px) {
+      font-size: 50px !important;
+      line-height: 55px !important;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 30px !important;
+      line-height: 33px !important;
+      margin-bottom: 15px;
+    }
   }
 
   &__lb-heading {
@@ -16,6 +35,10 @@
 
   &__lb-descr {
     max-width: 550px;
+
+    @media (max-width: 560px) {
+      br {display: none;}
+    }
   }
 
   &__count {
@@ -29,10 +52,17 @@
 
   &__heading {
     margin-bottom: 26px;
+
+    @media (max-width: 400px) {
+      margin-bottom: 18px;
+      br { display: none; }
+    }
   }
 
-  &__descr {
-
+  &__text-content {
+    @media (max-width: 400px) {
+      padding-left: 8px;
+    }
   }
 
   &__aside-info {
@@ -58,17 +88,47 @@
         color: #c7c7c7;
       }
     }
+
+    @media (max-width: 400px) {
+      // position: static;
+    }
   }
 
   &.how-it-works-item--1 {
     padding-left: 252px;
     padding-right: 35px;
 
+    @media (max-width: 1350px) {
+      padding-right: 35px;
+    }
+
+    @media (max-width: 560px) {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 82px;
+    }
+
+    @media (max-width: 360px) {
+      margin-bottom: 50px;
+    }
+
     .how-it-works-item__img-block {
       width: 201px;
       left: -15px;
       top: 0;
+
+      @media (max-width: 1350px) {
+        left: 0;
+      }
+
+      @media (max-width: 768px) {
+        width: 170px;
+        margin-left: 24px;
+        margin-bottom: 30px;
+      }
     }
+
+    
   }
 
   &.how-it-works-item--2 {
@@ -76,10 +136,39 @@
     margin-right: -20px;
     transform: translateY(228px);
 
+    @media (max-width: 1350px) {
+      margin-right: 0;
+      transform: none;
+    }
+
+    @media (max-width: 1200px) {
+      padding-left: 254px;
+    }
+
+    @media (max-width: 560px) {
+      padding-left: 0;
+      margin-right: 0;
+      
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 360px) {
+      margin-bottom: 50px;
+    }
+
     .how-it-works-item__img-block {
       width: 230px;
       left: 46px;
       top: 6px;
+
+      @media (max-width: 1200px) {
+        left: -14px;
+      }
+
+      @media (max-width: 768px) {
+        width: 228px;
+        margin-bottom: 7px;
+      }
     }
   }
 
@@ -87,32 +176,122 @@
     padding-left: 252px;
     padding-right: 50px;
 
+    @media (max-width: 1350px) {
+      padding-right: 0;
+    }
+
+    @media (max-width: 560px) {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 105px;
+    }
+
+    @media (max-width: 360px) {
+      margin-bottom: 50px;
+    }
+
     .how-it-works-item__img-block {
       width: 283px;
       left: -62px;
       top: -54px;
+
+      @media (max-width: 1350px) {
+        left: -32px;
+      }
+
+      @media (max-width: 1200px) {
+        left: -52px;
+      }
+
+      @media (max-width: 768px) {
+        left: 0;
+        width: 230px;
+      }
+
+      @media (max-width: 560px) {
+        width: 283px;
+        top: 0;
+        left: -14px;
+        position: relative;
+        margin-bottom: 16px;
+      }
     }
 
     .how-it-works-item__aside-info {
       left: 85px;
       top: 239px;
+
+      @media (max-width: 768px) {
+        left: 15px;
+        top: 209px;
+      }
+
+      @media (max-width: 560px) {
+        left: 86px;
+        top: 239px;
+      }
     }
   }
 
   &.how-it-works-item--4 {
     padding-left: 316px;
-    // margin-right: -20px;
     transform: translateY(252px);
+
+    @media (max-width: 1350px) {
+      transform: none;
+    }
+
+    @media (max-width: 1200px) {
+      padding-left: 246px;
+    }
+
+    @media (max-width: 768px) {
+      
+    }
+
+    @media (max-width: 560px) {
+      padding-left: 0;
+    }
+
+    @media (max-width: 360px) {
+      margin-bottom: 50px;
+    }
 
     .how-it-works-item__img-block {
       width: 221px;
       left: 54px;
       top: -42px;
+
+      @media (max-width: 1350px) {
+        left: 80px;
+      }
+
+      @media (max-width: 1200px) {
+        left: -30px;
+      }
+
+      @media (max-width: 768px) {
+        width: 200px;
+        left: 30px;
+      }
+
+      @media (max-width: 560px) {
+        
+        top: 0;
+        left: 0;
+        position: relative;
+        margin-left: 66px;
+        margin-bottom: 60px;
+      }
     }
 
     .how-it-works-item__aside-info {
       left: -65px;
       top: 210px;
+
+      @media (max-width: 768px) {
+        left: -35px;
+      }
     }
   }
 
@@ -123,26 +302,62 @@
       fill: none;
       stroke: #CED8FB;
     }
+
+    @media (max-width: 1350px) {
+      display: none;
+    }
+
+    @media (max-width: 400px) {
+      display: block;
+    }
+
+    @media (max-width: 360px) {
+      display: none;
+    }
   }
 
   &__arc.how-it-works-item__arc--1 {
     left: 568px;
     top: 18px;
+
+    @media (max-width: 400px) {
+      left: 152px;
+      top: calc(100% + 120px);
+      transform: rotate(86deg);
+    }
   }
 
   &__arc.how-it-works-item__arc--2 {
     left: -180px;
     top: 128px;
+
+      @media (max-width: 400px) {
+        left: 223px;
+        top: calc(100% + 33px);
+        transform: rotate(126deg);
+      }
   }
 
   &__arc.how-it-works-item__arc--3 {
     left: 596px;
     top: 103px;
+
+    @media (max-width: 400px) {
+      left: 212px;
+      top: calc(100% + 50px);
+      transform: rotate(82deg);
+    }
   }
 
   &__arc.how-it-works-item__arc--4 {
     left: 562px;
     top: 435px;
+
+    @media (max-width: 400px) {
+      left: 224px;
+      top: calc(100% + 24px);
+      transform: rotate(2deg);
+    }
   }
 
   &__ballon {
@@ -173,25 +388,55 @@
       right: 53px;
       top: -6px;
     }
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+
+    @media (max-width: 400px) {
+      display: none;
+      position: relative;
+      top: 0;
+    }
   }
 }
 
 .icon-arc1 {
   width: 347px;
   height: 113px;
+
+  @media (max-width: 400px) {
+    width: 226px;
+    height: 73px;
+  }
 }
 
 .icon-arc2 {
   width: 148px;
   height: 71px;
+
+  @media (max-width: 400px) {
+    width: 132.57px;
+    height: 63.47px;
+  }
 }
 
 .icon-arc3 {
   width: 266px;
   height: 105px;
+
+  @media (max-width: 400px) {
+    width: 140.57px;
+    height: 51.47px;
+  }
 }
 
 .icon-arc4 {
   width: 61px;
   height: 249px;
+
+  @media (max-width: 400px) {
+    width: 143.64px;
+    height: 155.88px;
+  }
 }
