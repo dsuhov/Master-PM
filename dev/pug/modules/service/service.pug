@@ -9,14 +9,14 @@ include ../buttons/buttons
     .service__content
       h2.service__title.futpt-demi-50-55 Мастер-РМ подберет, внедрит <br>и настроит программное обеспечение <br>в вашей компании <span class="em-blue">за 10-15 дней</span>
       .service__services-block
-        .service__card.service__card--1
+        .service__card.service__card--1(data-aos="fade-up" data-aos-delay="400")
           h3.service__heading.futpt-demi-32-38.tuna!= serviceData.card_1.heading
           p.service__text.futpt-normal-18-25-tuna!= serviceData.card_1.texts[0]
           .service__notice
             .service__notice-icon
               +blue-icon(serviceData.card_1.iconBlock[0].icon)
             p.service__notice-text.futpt-normal-18-25-tuna!= serviceData.card_1.iconBlock[0].text
-        .service__card.service__card--2
+        .service__card.service__card--2(data-aos="fade-up" data-aos-delay="400")
           h3.service__heading.futpt-demi-50-55.futpt-demi-50-55--white!= serviceData.card_3.heading
           each item in serviceData.card_3.texts
             p.service__notice-text.futpt-normal-18-25!= item
@@ -26,14 +26,14 @@ include ../buttons/buttons
               +turquoise-btn-72('Забронировать бесплатный тест', 'services-submit', '', 'button')
             .service__accept-conf
               include srvice-accept-conf
-        .service__card.service__card--3
+        .service__card.service__card--3(data-aos="fade-up" data-aos-delay="400")
           h3.service__heading.futpt-demi-32-38.tuna!= serviceData.card_2.heading
           each item in serviceData.card_2.iconBlock
             .service__notice
               .service__notice-icon
                 +blue-icon(item.icon)
               p.service__notice-text.futpt-normal-18-25-tuna!= item.text
-        .service__card.service__card--4
+        .service__card.service__card--4(data-aos="fade-up" data-aos-delay="400")
           h3.service__heading.futpt-demi-32-38.tuna!= serviceData.card_4.heading
           .service__notice
             .service__notice-icon

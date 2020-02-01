@@ -1,0 +1,218 @@
+.weak-spots {
+  position: relative;
+  padding-top: 194px;
+
+  @media (max-width: 950px) {
+    padding-top: 73px;
+  }
+
+  &__blue-glitter {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    right: 0;
+    top: -300px;
+    width: 371px;
+    height: 854px;
+
+    @media (max-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: 720px) {
+      display: block;
+    }
+  }
+
+  &__info {
+    padding-top: 16px;
+    flex-grow: 1;
+
+    @media (max-width: 950px) {
+      margin-right: 20px;
+    }
+    @media (max-width: 720px) {
+      margin-bottom: 70px;
+    }
+
+    @media (max-width: 400px) {
+      margin-right: 0;
+      margin-bottom: 62px;
+    }
+  }
+
+  &__title {
+    max-width: 680px;
+    margin-bottom: 26px;
+
+    @media (max-width: 950px) {
+      br {display: none}
+      font-size: 30px;
+      line-height: 110%;
+    }
+  }
+
+  &__subtext {
+    max-width: 590px;
+    margin-bottom: 51px;
+
+    @media (max-width: 950px) {
+      br {display: none}
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+
+  &__whatget {
+    @media (max-width: 1100px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+   }
+
+  &__whatget-item:not(:last-child) {
+    margin-bottom: 36px;
+
+    @media (max-width: 400px) {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__btn {
+    width: (456/1200)*100%;
+    flex: 0 1 (456/1200)*100%;
+    min-width: 318px;
+
+    @media (max-width: 400px) {
+      width: 100%;
+      min-width: auto;
+    }
+  }
+  
+  &__btn-height-def {
+    position: relative;
+    padding-top: (736/456)*100%;
+  }
+
+  &__img-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__person-card {
+    position: absolute;
+    top: 72.5%;
+    left: (100%/2)*(1-(343/456));
+
+    @media (max-width: 950px) {
+      left: (100%/2)*(1-(270/318));
+      top: 70.5%;
+    }
+  }
+
+  &__click-btn {
+    position: absolute;
+    bottom: -40px;
+    width: (230/343)*100%;
+    left: (100%/2)*(1-(230/343));
+
+    @media (max-width: 950px) {
+      width: (230/270)*100%;
+      left: (100%/2)*(1-(230/270));
+    }
+  }
+}
+
+.whatget-item {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 1100px) {
+    max-width: 320px;
+  }
+
+  @media (max-width: 950px) {
+    display:block;
+  }
+
+  &__icon {
+    flex: 0 0 76px;
+    width: 76px;
+    height: 76px;
+    border: 1px solid #E8EEFF;
+    border-radius: 50%;
+    margin-right: 36px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .svg-sprite-icon {
+      fill: $royal-blue;
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (max-width: 950px) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    max-width: 355px;
+  }
+}
+
+.ws-person-card {
+  background-color: $white;
+  box-shadow: 0px 0px 48px rgba(76, 103, 134, 0.2);
+  border-radius: 10px;
+  width: (343/456)*100%;
+  padding: 22px 36px 54px;
+
+  @media (max-width: 950px) {
+    width: (270/318)*100%;
+    padding: 27px 36px 54px;
+  }
+
+  &__name {
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 38px;
+    color: #333333;
+
+    @media (max-width: 1200px) {
+      font-size: 20px;
+      line-height: 160%;
+      text-align: center;
+      margin-bottom: 9px;
+    }
+  }
+
+  &__position {
+    font-family: 'Futura PT Book';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: $royal-blue;
+
+    @media (max-width: 950px) {
+      text-align: center  ;
+    }
+  }
+
+  .weak-spots__click-btn {
+    position: absolute;
+  }
+}

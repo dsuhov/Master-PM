@@ -1,0 +1,446 @@
+.quiz-form {
+  background: $white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 80px rgba(131, 180, 208, 0.35);
+  overflow: hidden;
+
+  display: flex;
+
+  @media (max-width: 1200px) {
+    display: block;
+  }
+
+  &__heading {
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #222222;
+
+
+  }
+
+  &__main {
+    flex: 0 1 (805/1192)*100%;
+    display: flex;
+    padding: 70px 112px 126px 76px;
+
+    @media (max-width: 1200px) {
+      justify-content: center;
+      flex: 0 1 auto;
+      padding: 70px 112px 126px 76px;
+    }
+
+    @media (max-width: 950px) {
+      padding: 40px 30px 65px;
+    }
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 400px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__side {
+    flex: 1 1 auto;
+    background-color: $royal-blue;
+    padding: 70px 52px 76px;
+
+    @media (max-width: 1200px) {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @media (max-width: 720px) {
+      padding: 44px 30px 56px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 400px) {
+      align-items: flex-start;
+      //width: 100%;
+    }
+  }
+
+  &__pane {
+    flex: 0 1 300px;
+
+    &:last-child {
+      padding-left: 42px;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 300px;
+
+      @media (max-width: 1200px) {
+        padding-left: 0;
+        flex: 0 0 300px;
+      }
+
+      @media (max-width: 768px) {
+        flex: 0 0 268px;
+      }
+
+      @media (max-width: 750px) {
+        flex: 1 1 auto;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      flex: 0 0 300px;
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 268px;
+    }
+
+    @media (max-width: 750px) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__q-block.quiz-form__q-block--companies {
+    @media (max-width: 720px) {
+      width: 268px;
+      padding-top: 66px;
+    }
+  }
+
+  &__q-block {
+    @media (max-width: 720px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 400px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__q-block:first-child {
+    margin-bottom: 62px;
+
+    @media (max-width: 720px) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 400px) {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__radio-group {
+    padding-top: 27px;
+
+    &.quiz-form__radio-group--2-column {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+
+      & > * {
+        width: 44.9%;
+      }
+
+      @media (max-width: 720px) {
+        width: 256px;
+        justify-content: space-between;
+        margin-bottom: 17px;
+      }
+    }
+  }
+
+  &__radio-btn {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    height: 28px;
+    padding-left: 40px;
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__radio-pimp {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #E8EEFF;
+    transition: border 0.2s linear;
+    border: none;
+
+    top: 0;
+    left: 0;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-input:checked + &__radio-pimp {
+    background: $white;
+    border: 7.2px solid $royal-blue;
+  }
+
+  &__checkbox-btn {
+    position: relative;
+    height: 26px;
+    cursor: pointer;
+    display: block;
+    padding-left: 40px;
+  }
+
+  &__checkbox-input {
+    display: none;
+  }
+
+  &__checkbox-pimp.quiz-form__checkbox-pimp--checked {
+    display: none;
+  }
+
+  &__checkbox-input:checked ~ &__checkbox-pimp.quiz-form__checkbox-pimp--checked {
+    display: block;
+  }
+
+  &__checkbox-pimp {
+    position: absolute;
+    top: 0;
+    left: 1px;
+
+    .svg-sprite-icon {
+      width: 26px;
+      height: 26px;
+      fill: $royal-blue;
+    }
+  }
+
+  &__q-block.quiz-form__q-block--checkboxes {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  &__checkbox-group {
+    padding-top: 20px;
+  }
+
+  &__checkbox-group &__checkbox-btn:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+
+  &__companies-group {
+    padding-top: 36px;
+    max-width: 276px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 720px) {
+      padding-top: 26px;
+    }
+  }
+
+  &__company-btn {
+    cursor: pointer;
+    display: block;
+    width: 131.53px;
+    height: 46px;
+
+    margin-bottom: 13px;
+  }
+
+  &__company-input {
+    display: none;
+  }
+
+  &__company-logo {
+    width: 100%;
+    height: 46px;
+    border: 0.71875px solid #D4DBEF;
+    box-sizing: border-box;
+    border-radius: 7.1875px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: initial;
+    }
+  }
+
+  &__company-input:checked + &__company-logo {
+    border: 2px solid $royal-blue;
+  }
+
+  &__side-title {
+    margin-bottom: 28px;
+
+    @media (max-width: 400px) {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__whBtnsBlock {
+    margin-bottom: 45px;
+
+    @media (max-width: 400px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__quiz-list {
+    margin-bottom: 26px;
+
+    &-link {
+      font-family: 'Futura PT Demi';
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 23px;
+      color: $white;
+      text-transform: uppercase;
+      transition: border-bottom 0.2s linear;
+      border-bottom: 1px solid transparent;
+      letter-spacing: 0.1em;
+
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+      
+    }
+  }
+
+  &__accept-conf {
+
+  }
+
+  &__submit-block {
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+  }
+
+  &__ac-label {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding-left: 46px;
+    max-width: 250px;
+
+    span {
+      font-family: 'Futura PT Book';
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      color: $white;
+    }
+
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__ac-checkbox {
+    display: none;
+  }
+
+  &__ac-icon {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+
+    .svg-sprite-icon {
+      fill: $white;
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__ac-icon.quiz-form__ac-icon--checked {
+    display: none;
+  }
+
+  &__ac-checkbox:checked + &__ac-icon.quiz-form__ac-icon {
+    display: block;
+  }
+
+  &__ac-checkbox:checked ~ &__ac-icon.quiz-form__ac-icon--checked {
+    display: block;
+  }
+}
+
+
+
+
+.whiteRadioBtn {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  height: 28px;
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-pimp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: $white;
+    border: none;
+    // transition: 0.2s linear;
+    // transition-property: border, background-color;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: $royal-blue;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      transition-property: width, height;
+      transition: 0.2s linear;
+    }
+  }
+
+  &__radio-input:checked + &__radio-pimp {
+    &::before {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+#quiz-form-tel-input {
+  padding-left: 35px;
+  margin-bottom: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+#quiz-form-sbm-button {
+  margin-bottom: 19px;
+}

@@ -6,11 +6,11 @@
 @import "utils/typography";
 @import "utils/icons";
 
-::-webkit-scrollbar { width: 0 !important }
+// ::-webkit-scrollbar { width: 0 !important }
 
 html {
   font-size: $base-font-size;
-  line-height: 140%;
+  // line-height: 140%;
   height: 100%;
   font-family: 'Futura PT Book', sans-serif;
   font-weight: normal;

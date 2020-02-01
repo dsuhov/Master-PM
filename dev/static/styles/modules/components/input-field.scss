@@ -11,6 +11,10 @@
 
   padding-left: 40px;
 
+  @media (max-width: 400px) {
+    padding-left: 24px;
+  }
+
   &.input-field--simple-border {
     border: 1px solid rgba(255, 255, 255, 0.4);
   }
@@ -27,5 +31,19 @@
   &.input-field--64 { // on line-height 24px
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+
+  &.input-field--gbold {
+    font-family: 'Gilroy';
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 26px;
+
+    @include placeholder() {
+      font-family: 'Gilroy';
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 }

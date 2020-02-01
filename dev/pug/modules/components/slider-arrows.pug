@@ -1,0 +1,7 @@
+mixin slider-arrows(direction, id)
+  if direction === 'prev'
+    button(id=`slider-arrow__${id}--prev`).slider-arrow
+      +icon('prev-arrow')
+  if direction === 'next'
+    button(id=`slider-arrow__${id}--next`).slider-arrow
+      +icon('next-arrow')

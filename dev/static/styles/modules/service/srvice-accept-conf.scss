@@ -9,6 +9,12 @@
   color: $white;
   display: flex;
 
+  @media (max-width: 560px) {
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0.1em;
+  }
+
   &__icon {
     width: 24px;
     height: 24px;
@@ -18,6 +24,7 @@
     align-items: center;
 
     margin-right: 16px;
+    flex: 0 0 24px;
   }
 
   .icon-check-square {

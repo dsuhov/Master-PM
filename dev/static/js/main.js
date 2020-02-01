@@ -1,6 +1,7 @@
 $(document).ready(function () {
   svg4everybody({});
   burgerAction();
+  
 
   new LazyLoad({
     elements_selector: ".lazy"
@@ -18,6 +19,7 @@ $(document).ready(function () {
 
     initAOS();
     initLazyBG();
+    modernSoftSlider();
   }
   
 });
@@ -70,6 +72,7 @@ if (!Array.from) {
 
 
 // Modules
+const cssLoaderHtml = `<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
 
 function burgerAction() {
   var burgerElement = document.querySelector('.burger');
@@ -168,3 +171,66 @@ function initLazyBG() {
     elements_selector: ".lazyBg"
   });
 }
+
+// modern Soft Slider
+function modernSoftSlider() {
+  const sliderContainer = document.querySelector('.modern-soft__slider');
+  const sliderElement = $('#modern-soft__slider-js');
+  const dataSliderElement = $('#modern-soft__info-slider');
+  const logoControlElements = document.querySelectorAll('.modern-soft__logo-control');
+
+  const loader = document.createElement('div');
+  loader.classList.add('loader');
+  loader.innerHTML = cssLoaderHtml;
+
+  const lazyStartedLoading = () => {
+    sliderContainer.append(loader);
+  }
+
+  const lazyLoaded = () => {
+    loader.remove();
+  }
+
+  new LazyLoad({
+    elements_selector: ".ms-slider-img",
+    callback_reveal: lazyStartedLoading,
+    callback_loaded: lazyLoaded
+  });
+
+  const slickParams = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    asNavFor: '#modern-soft__info-slider',
+    prevArrow: '#slider-arrow__modern-soft--prev',
+    nextArrow: '#slider-arrow__modern-soft--next'
+  }
+
+  const ds_slickParams = {
+    infinite: true,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    draggable: false,
+    accessibility: false,
+    swipeToSlide: false,
+    touchMove: false
+  }
+  
+
+  sliderElement.slick(slickParams);
+  dataSliderElement.slick(ds_slickParams);
+
+  Array.from(logoControlElements).forEach(el => {
+    el.addEventListener('click', () => {
+      sliderElement.slick('slickGoTo', parseInt(el.dataset.slide));
+
+      [...logoControlElements].forEach(lcEl => {
+        lcEl.classList.remove('active');
+        el.classList.add('active');
+      })
+    });
+  })
+}
+

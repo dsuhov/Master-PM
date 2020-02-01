@@ -1,0 +1,24 @@
+.reviews {
+  padding-top: 316px;
+  height: 2795px;
+  background: url(../images/general/reviews-bg.svg) center top 150px / 100% auto no-repeat;
+
+  &__content {
+
+  }
+
+  &__top {
+
+  }
+
+  &__bottom {
+
+  }
+}
+
+@import "reviews-top";
+@import "reviews-bottom";
+@import "rev-block";
+@import "rev-block-slide";
+@import "reviews-slide-tabs";
+@import "revies-tab-item";

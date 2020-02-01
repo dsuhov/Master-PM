@@ -1,0 +1,40 @@
+-
+  var textData = [
+    '<b>С 2004 года</b> помогаем повышать эффективность печати - поставляем печатную технику, внедряем СУП <br>и осуществляет услуги аутсорсинга печати.',
+    '<b>Осуществляем покопийный сервис <br>в 2647 отделениях банков</b> <br>и магазинах ритейлеров',
+    '<b>Сертифицированный партнер<br> брендов</b> HP, Brother, Canon, <br>Konica Minolta, RICOH, Samsung и <br>разработчиков ПО MyQ, SafeQ, <br>PaperCut и HP AC.'
+  ]
+
+-
+  var partnersData = [
+    'Toyota Bank', 'fmlogistic', 'euroset', 'metro', 'villans', 'villans2'
+  ];
+
+.why-trust
+  .container
+    .why-trust__content
+      .why-trust__left-side
+          .why-trust__img-wrapper
+            img(src="" data-src="static/images/general/whytrustpic.jpg" alt="Почему Мастер-РМ можно доверять").why-trust__img.lazyBg
+      .why-trust__right-side
+        h2.why-trust__title.futpt-demi-50-55 Почему Мастер-РМ <br><span class="em-blue">можно доверять</span>
+        ul.why-trust__items
+          li.why-trust__item.why-trust-item
+            .why-trust-item__icon
+              +icon('long-check')
+            p.why-trust-item__text!= textData[0]
+          li.why-trust__item.why-trust-item
+            .why-trust-item__icon
+              +icon('long-check')
+            p.why-trust-item__text!= textData[1]
+          li.why-trust__item.why-trust-item
+            .why-trust-item__icon
+              +icon('long-check')
+            p.why-trust-item__text!= textData[2]
+        .why-trust-item__logo(data-bg="url('static/images/general/hppf.png')").lazyBg
+    .why-trust__partners.why-trust-partners
+      h3.why-trust-partners__title Наши партнеры
+      .why-trust-partners__icons
+        each item in partnersData
+          img(src=`static/images/general/${item}.png`, alt="").why-trust-partners__img
+          //- .why-trust-partners__icon.lazyBg(data-bg=`url('static/images/general/${item}.png')`)

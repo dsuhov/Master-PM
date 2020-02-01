@@ -1,0 +1,64 @@
+include reviewsData
+
+mixin rev-block-slide(data)
+  .rev-block-slide
+    .rev-block-slide__content
+      .rev-block-slide__pic-side
+        img(src=`static/images/reviews/${data.pic}`, alt=""+data.title).rev-block-slide__pic
+      .rev-block-slide__main
+        h3.rev-block-slide__title.futpt-demi-32-38.tuna!= data.title
+        .rev-block-slide__implementation-period
+          span!= data.implementationPeriod[0]
+          span!= data.implementationPeriod[1]
+        .rev-block-slide__tabs.reviews-slide-tabs
+          // tab-block
+          .reviews-slide-tabs__block.reviews-slide-tabs__block--1.reviews-slide-tabs__block--active
+            .reviews-slide-tabs__btn Задача
+            .reviews-slide-tabs__content
+              each tabItem in data.tabs.task
+                .revies-tab-item
+                  .revies-tab-item__icon
+                    +icon('check')
+                  .revies-tab-item__text!= tabItem
+          // tab-block
+          .reviews-slide-tabs__block.reviews-slide-tabs__block--2
+            .reviews-slide-tabs__btn Решение
+            .reviews-slide-tabs__content
+              each tabItem in data.tabs.task
+                .revies-tab-item
+                  .revies-tab-item__icon
+                    +icon('check')
+                  .revies-tab-item__text!= tabItem
+          // tab-block
+          .reviews-slide-tabs__block.reviews-slide-tabs__block--3
+            .reviews-slide-tabs__btn Результат
+            .reviews-slide-tabs__content
+              each tabItem in data.tabs.task
+                .revies-tab-item
+                  .revies-tab-item__icon
+                    +icon('check')
+                  .revies-tab-item__text!= tabItem
+
+.reviews
+  .container
+    .reviews__content
+      .reviews__top
+        .reviews-top
+          .reviews-top__title.futpt-demi-50-55.futpt-demi-50-55--white Мастер-РМ уже помог повысить эффективность печати 89 компаниям
+          .reviews-top__over-line
+            .reviews-top__over-item Сократить расходы
+            .reviews-top__over-item Защитить данные
+            .reviews-top__over-item Оптимизировать печать
+          .reviews-top__rev-block.rev-block
+            .rev-block__nav-side
+              ul.rev-block__nav-items
+                li.rev-block__nav-item.rev-block__nav-item--active.lazyBg(data-bg="url('static/images/reviews/europekrbank.png')")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/ww.png')")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/ashan.png')")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/decathlon.png')")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/avon.png')")
+            .rev-block__main
+              .rev-block__slider#rev-block-slider
+                each item in reviewsDataArray
+                  +rev-block-slide(item)
+      .reviews__bottom

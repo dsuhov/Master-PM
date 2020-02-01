@@ -25,6 +25,11 @@
   &__title {
     text-align: center;
     margin-bottom: 90px;
+
+    @media (max-width: 400px) {
+      br {display: none;}
+      margin-bottom: 42px;
+    }
   }
 
   &__services-block {
@@ -58,6 +63,8 @@
 
     @media (max-width: 560px) {
       br {display: none;}
+      width: 100%;
+      padding: 32px;
     }
   }
 
@@ -81,6 +88,10 @@
       height: auto;
       padding: 53px 64px 40px;
       order: 4;
+    }
+
+    @media (max-width: 560px) {
+      padding: 35px;
     }
   }
 
@@ -126,10 +137,19 @@
     &:not(:last-child) {
       margin-bottom: 29px;
     }
+
+    @media (max-width: 400px) {
+      display: block;
+    }
   }
 
-  &__notice-icon {
+  &__notice-icon {    margin-bottom: 20px;
     margin-right: 22px;
+
+    @media (max-width: 400px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__notice-text {
@@ -152,6 +172,16 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
+
+      @media (max-width: 560px) {
+        left: 3px;
+        top: 48%;
+        height: 80%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      margin-left: 0;
     }
   }
 
@@ -161,12 +191,27 @@
     .input-field-block {
       max-width: 360px;
       margin-bottom: 15px;
+
+      @media (max-width: 560px) {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      padding-top: 34px;
     }
   }
 
   &__btn {
     max-width: 360px;
     margin-bottom: 19px;
+
+    @media (max-width: 560px) {
+      button {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
   }
 }
 

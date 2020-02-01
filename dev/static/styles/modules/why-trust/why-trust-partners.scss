@@ -1,0 +1,33 @@
+.why-trust-partners {
+  padding-top: 125px;
+
+  &__title {
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 44px;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    flex: 1 1 auto;
+    min-height: 80px;
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: center;
+  }
+
+  &__img {
+    max-width: none;
+    width: auto;
+    height: auto;
+  }
+}

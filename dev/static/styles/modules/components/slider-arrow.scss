@@ -1,0 +1,18 @@
+.slider-arrow {
+  cursor: pointer;
+  width: 58px;
+  height: 58px;
+
+  border: 1px solid #DBEAFF;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .svg-sprite-icon {
+    fill: $white;
+    width: 9.06px;
+    height: 15.29px;
+  }
+}

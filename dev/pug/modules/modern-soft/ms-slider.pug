@@ -1,0 +1,12 @@
+mixin ms-slider-slide(imgPath)
+  .ms-slider-slide
+    img(src="" data-src=""+imgPath).ms-slider-slide__img.ms-slider-img
+
+
+.modern-soft__slider
+  #modern-soft__slider-js
+    +ms-slider-slide('static/images/modern-soft/iMac-1.png')
+    +ms-slider-slide('static/images/modern-soft/iMac-2.png')
+    +ms-slider-slide('static/images/modern-soft/iMac-3.png')
+    +ms-slider-slide('static/images/modern-soft/iMac-4.png')
+    +ms-slider-slide('static/images/modern-soft/iMac-5.png')

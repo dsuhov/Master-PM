@@ -1,0 +1,44 @@
+include ../components/check-circle
+include ../components/slider-arrows
+include modern-soft-data
+include ../buttons/buttons
+
+mixin info-slide(item)
+  .info-slide
+    .info-slide__title.futpt-demi-32-38!= item.title
+    .info-slide__paragraphs
+      each par in item.paragraphs
+        .info-slide__paragraph
+          p!= par
+          +check-circle('white')
+
+.modern-soft
+  .container
+    h2.modern-soft__title.futpt-demi-50-55.futpt-demi-50-55--white Используем только современные <br>проверенные программы
+    p.modern-soft__subtext.futpt-normal-24-34 У нас есть квалификация по инсталляции и <br>техподдержке, подтвержденная сертификатами.
+    .modern-soft__slider-container
+      .modern-soft__slider-inner
+        include ms-slider
+    .modern-soft__bottom-content
+      .modern-soft__arrows
+        .modern-soft__arrows-prev
+          +slider-arrows('prev', 'modern-soft')
+        .modern-soft__arrows-next
+          +slider-arrows('next', 'modern-soft')
+      .modern-soft__logo-controls
+        .modern-soft__logo-control(data-slide="0" class="lazyBg active" data-bg="url('static/images/modern-soft/myq.png')").modern-soft__logo-control--1
+        .modern-soft__logo-control(data-slide="1" class="lazyBg" data-bg="url('static/images/modern-soft/ysoft.png')").modern-soft__logo-control--2
+        .modern-soft__logo-control(data-slide="2" class="lazyBg" data-bg="url('static/images/modern-soft/printx.png')").modern-soft__logo-control--3
+        .modern-soft__logo-control(data-slide="3" class="lazyBg" data-bg="url('static/images/modern-soft/papercut.png')").modern-soft__logo-control--4
+        .modern-soft__logo-control(data-slide="4" class="lazyBg" data-bg="url('static/images/modern-soft/hp.png')").modern-soft__logo-control--5
+      .modern-soft__info
+        .modern-soft__info-slider#modern-soft__info-slider
+          each item in infoSlideData
+            +info-slide(item)
+        .modern-soft__btns
+          .modern-soft__calc-price-btn
+            +turquoise-btn-72('Рассчитать стоимость', 'ms-calc-price', '', 'button')
+          .modern-soft__get-presentation-wrapper
+            .modern-soft__get-presentation
+              +icon('download')
+              span.futpt-normal-18-25 Получить презентацию

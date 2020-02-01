@@ -1,0 +1,81 @@
+.quiz {
+  padding-top: 32px;
+
+  @media (max-width: 400px) {
+    padding-top: 80px;
+  }
+
+  &__title {
+    color: #333333;
+    text-align: center;
+
+    @media (max-width: 400px) {
+      br {display: none}
+    }
+  }
+
+  &__heading-block {
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+
+    @media (max-width: 400px) {
+      display: block;
+      padding-top: 38px;
+    }
+  }
+
+  &__top-item {
+    max-width: 260px;
+
+    &:first-child {
+      margin-right: 60px;
+    }
+
+    @media (max-width: 400px) {
+      width: 100%;
+      max-width: none;
+
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__top-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: 1px solid #E8EEFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    margin-bottom: 21px;
+
+    .svg-sprite-icon {
+      width: 40px;
+      height: 40px;
+      fill: $royal-blue;
+    }
+  }
+
+  &__top-text {
+    text-align: center;
+  }
+
+  &__quiz-block {
+    padding-top: 62px;
+
+    @media (max-width: 400px) {
+      padding-top: 68px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@import "quiz-form";

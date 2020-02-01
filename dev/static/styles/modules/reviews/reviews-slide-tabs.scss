@@ -1,0 +1,61 @@
+.reviews-slide-tabs {
+  height: 200px;
+  // background-color: rgba(45, 78, 69, 0.5);
+  width: 100%;
+  position: relative;
+
+  display: flex;
+
+  &__block {
+    flex: 1 1 33.333333%;
+    width: 33.333333%;
+  }
+
+  &__block &__content {
+    display: none;
+  }
+
+  &__btn {
+    cursor: pointer;
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: $tuna;
+    padding: 14px 0;
+    text-align: center;
+  }
+
+  &__content {
+    position: absolute;
+    top: 96px;
+    left: 0;
+    width: 100%;
+  }
+
+  &__block--1 &__btn {
+    border: 1px solid #DBEAFF;
+    border-radius: 20px 0 0 20px;
+  }
+
+  &__block--2 &__btn {
+    border-top: 1px solid #DBEAFF;
+    border-bottom: 1px solid #DBEAFF;
+  }
+
+  &__block--3 &__btn {
+    border: 1px solid #DBEAFF;
+    border-radius: 0 20px 20px 0;
+  }
+
+  &__block.reviews-slide-tabs__block--active &__btn,
+  &__btn:hover {
+    border-color: $royal-blue;
+    background-color: $royal-blue;
+    color: $white;
+  }
+
+  &__block.reviews-slide-tabs__block--active &__content {
+    display: block;
+  }
+}

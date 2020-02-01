@@ -1,0 +1,110 @@
+include ../components/input-field
+include ../buttons/buttons
+
+-
+  var quizInputData = {
+    type: 'tel',
+    id: 'quiz-form-tel-input',
+    classModifier: '64 input-field--simple-border input-field--white input-field--gbold',
+    placeholder: '+7 (___) ___-__-__'
+  }
+
+mixin radioBtn(text, name, checked)
+  label.quiz-form__radio-btn
+    if checked
+      input(type="radio" name=""+name value=""+text checked).quiz-form__radio-input
+    else
+      input(type="radio" name=""+name value=""+text).quiz-form__radio-input
+    .quiz-form__radio-pimp
+    span.quiz-form__q-text.futpt-normal-18-25-tuna= text
+
+mixin checkBoxBtn(text, name)
+  label.quiz-form__checkbox-btn
+    input(type="checkbox" name=""+name value=""+text).quiz-form__checkbox-input
+    .quiz-form__checkbox-pimp
+      +icon('blue-checkbox')
+    .quiz-form__checkbox-pimp.quiz-form__checkbox-pimp--checked
+      +icon('blue-checkbox-ckecked')
+    span.quiz-form__q-text.futpt-normal-18-25-tuna= text
+
+mixin companyCkeckbox(name, logoSrc, alt)
+  label.quiz-form__company-btn
+    input(type="checkbox" name=""+name value=""+alt).quiz-form__company-input
+    .quiz-form__company-logo
+      img(src="" data-src=`static/images/test/${logoSrc}.png` alt=""+alt).lazyBg
+
+mixin whiteRadio(text, name, checked)
+  label.whiteRadioBtn
+    if checked
+      input(type="radio" name=""+name value=""+text checked).whiteRadioBtn__radio-input
+    else
+      input(type="radio" name=""+name value=""+text).whiteRadioBtn__radio-input
+    .whiteRadioBtn__radio-pimp
+    span.whiteRadioBtn__q-text.futpt-normal-18-25= text
+
+form(action="" method="post" id="quiz-form").quiz-form
+  .quiz-form__main
+    .quiz-form__pane
+      .quiz-form__q-block
+        .quiz-form__heading Сколько печатающих <br>устройств в компании?
+        .quiz-form__radio-group
+          +radioBtn('До 5', 'How many printing devices?', true)
+          +radioBtn('5-10', 'How many printing devices?', false)
+          +radioBtn('10-20', 'How many printing devices?', false)
+          +radioBtn('20-50', 'How many printing devices?', false)
+          +radioBtn('Более 50', 'How many printing devices?', false)
+          +radioBtn('Не знаю', 'How many printing devices?', false)
+      .quiz-form__q-block
+        .quiz-form__heading Сколько сотрудников <br>в компании пользуются <br>печатью?
+        .quiz-form__radio-group.quiz-form__radio-group--2-column
+          +radioBtn('До 5', 'How many employees use printing?', false)
+          +radioBtn('5-10', 'How many employees use printing?', false)
+          +radioBtn('10-20', 'How many employees use printing?', false)
+          +radioBtn('20-50', 'How many employees use printing?', false)
+          +radioBtn('100-500', 'How many employees use printing?', false)
+          +radioBtn('Не знаю', 'How many employees use printing?', false)
+        .quiz-form__q-block
+          +checkBoxBtn('У нас несколько офисов', 'У нас несколько офисов')
+    .quiz-form__pane
+      .quiz-form__q-block.quiz-form__q-block--companies
+        .quiz-form__heading Укажите бренды печатающих <br>устройств в компании
+        .quiz-form__companies-group
+          +companyCkeckbox('What printing companies', 'hp2', 'HP')
+          +companyCkeckbox('What printing companies', 'brother', 'Brother')
+          +companyCkeckbox('What printing companies', 'ricon', 'Ricoh')
+          +companyCkeckbox('What printing companies', 'konica', 'Conica Minolta')
+          +companyCkeckbox('What printing companies', 'canon', 'Canon')
+          +companyCkeckbox('What printing companies', 'xerox', 'Xerox')
+          +companyCkeckbox('What printing companies', 'kyocera', 'Kyocera')
+          +companyCkeckbox('What printing companies', 'epson', 'Epson')
+          +companyCkeckbox('What printing companies', 'lexmark', 'Lexmark')
+          +companyCkeckbox('What printing companies', 'donotknow', 'Не знаю')
+      .quiz-form__q-block.quiz-form__q-block--checkboxes
+        .quiz-form__heading Как еще Вы используете МФУ?
+        .quiz-form__checkbox-group
+          +checkBoxBtn('Сканирование', 'How else do you use mfu?[]')
+          +checkBoxBtn('Копирование', 'How else do you use mfu?[]')
+          +checkBoxBtn('Факс', 'How else do you use mfu?[]')
+          +checkBoxBtn('Используем цветную печать', 'How else do you use mfu?[]')
+  .quiz-form__side
+    .quiz-form__side-q-block
+      .quiz-form__side-title.futpt-demi-24-34 Как Вам удобнее <br>получить варианты <br>ПО и расчет стоимости?
+      .quiz-form__whBtnsBlock
+        +whiteRadio('По телефону', 'How do you want to get variants and account?', true)
+        +whiteRadio('Viber', 'How do you want to get variants and account?', false)
+        +whiteRadio('Email', 'How do you want to get variants and account?', false)
+        +whiteRadio('WhatsApp', 'How do you want to get variants and account?', false)
+        +whiteRadio('Telegram', 'How do you want to get variants and account?', false)
+    .quiz-form__submit-block
+      +input-field(quizInputData)
+      +turquoise-btn-72('получить решения +<br> расчет стоимости', 'quiz-form-sbm-button', '', 'button')
+      .quiz-form__quiz-list
+        a(href="#").quiz-form__quiz-list-link скачать опросный лист <br>для специалистов
+      .quiz-form__accept-conf
+        label.quiz-form__ac-label
+          input(type="checkbox" name="accept-conf").quiz-form__ac-checkbox
+          .quiz-form__ac-icon
+            +icon('white-checkbox')
+          .quiz-form__ac-icon.quiz-form__ac-icon--checked
+            +icon('white-checkbox-checked')
+          span Согласен с Политикой конфиденциальности сайта

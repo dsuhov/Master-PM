@@ -1,0 +1,31 @@
+include ../buttons/buttons
+
+.weak-spots
+  .weak-spots__blue-glitter.lazyBg(data-bg="url('static/images/general/blue-glitter-3.png')")
+  .container
+    .weak-spots__content
+      .weak-spots__info
+        h2.weak-spots__title.futpt-demi-50-55 <span class="em-blue">Найдем уязвимые места</span> <br>в вашей инфраструктуре <br>печати и поможем закрыть их
+        .weak-spots__subtext.futpt-normal-24-34-tuna Получите аудит инфраструктуры печати вашей компании <br>по 78 параметрам. По его итогам Вы получите:
+        ul.weak-spots__whatget
+          li.weak-spots__whatget-item.whatget-item(data-aos="fade-right")
+            .whatget-item__icon
+              +icon('data-security')
+            .whatget-item__text.futpt-normal-18-25-tuna Правила печати в организации, которые помогут надежно защитить конфиденциальные документы.
+          li.weak-spots__whatget-item.whatget-item(data-aos="fade-right")
+            .whatget-item__icon
+              +icon('paper')
+            .whatget-item__text.futpt-normal-18-25-tuna Рекомендации по снижению издержек печати: сокращение парка техники, ограничение цветности, перенос бумажных документов в электронные форматы.
+          li.weak-spots__whatget-item.whatget-item(data-aos="fade-right")
+            .whatget-item__icon
+              +icon('plans')
+            .whatget-item__text.futpt-normal-18-25-tuna Оптимальный план расстановки устройств с учетом реальных нагрузок и расположения рабочих мест для удобства сотрудников.
+      .weak-spots__btn
+        .weak-spots__btn-height-def
+          .weak-spots__img-wrapper
+            img(src="empty.png" data-src="static/images/general/apetrov.jpg" alt="Александр Петров").weak-spots__img.lazyBg
+          .weak-spots__person-card.ws-person-card(data-aos="fade-up")
+            .ws-person-card__name Александр Петров
+            .ws-person-card__position Руководитель отдела по внедрению СУП компании Мастер-РМ
+            .weak-spots__click-btn(data-aos="fade-up")
+              +turquoise-btn-72('Получить аудит', 'weak-spots-btn', '', 'button')

@@ -1,0 +1,57 @@
+.rev-block-slide {
+
+  &__content {
+    display: flex;
+    padding: 0 108px 0 50px;
+    height: 500px;
+  }border-radius: 10px;
+
+  &__pic-side {
+    flex: 0 0 (284/815)*100%;
+    width: (284/815)*100%;
+    // background: rgba(255, 255, 255, 0.4);
+    margin-right: (58/815)*100%;
+  }
+
+  &__main {
+    // background-color: rgba(202, 215, 222, 0.5);
+    flex: 1 1 auto;
+    
+  }
+
+  &__pic {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__title {
+    margin-bottom: 26px;
+  }
+
+  &__implementation-period {
+    margin-bottom: 26px;
+
+    span {
+      display: block;
+
+      &:first-child {
+        font-family: 'Futura PT Demi';
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 160%;
+
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $royal-blue;
+      }
+
+      &:last-child {
+        font-family: 'Futura PT Book';
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 160%;
+        color: $tuna;
+      }
+    }
+  }
+}
