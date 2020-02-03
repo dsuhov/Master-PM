@@ -3,8 +3,8 @@
   &__content {
     display: flex;
     padding: 0 108px 0 50px;
-    height: 500px;
-  }border-radius: 10px;
+    min-height: 580px;
+  }
 
   &__pic-side {
     flex: 0 0 (284/815)*100%;
@@ -16,7 +16,7 @@
   &__main {
     // background-color: rgba(202, 215, 222, 0.5);
     flex: 1 1 auto;
-    
+    // min-height: 700px;
   }
 
   &__pic {
@@ -27,6 +27,8 @@
   &__title {
     margin-bottom: 26px;
   }
+
+
 
   &__implementation-period {
     margin-bottom: 26px;

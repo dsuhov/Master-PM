@@ -1,0 +1,43 @@
+.audio-cards {
+  
+
+  &__title {
+    text-align: center;
+    max-width: 730px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    max-width: 470px;
+    margin: 0 auto;
+    margin-bottom: 62px;
+  }
+
+  &__cards {
+    display: flex;
+  }
+
+  &__column {
+    flex: 0 0 (570/1200)*100%;
+
+    &:first-child {
+      margin-right: (60/1200)*100%;
+    }
+
+    &:last-child {
+      padding-top: 80px;
+    }
+  }
+
+  &__card {
+    width: 570px;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@import "audio-card";

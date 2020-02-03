@@ -1,0 +1,73 @@
+.next-step-card {
+  background-color: $white;
+  border-radius: 10px;
+  // box-shadow: 0px 24px 48px rgba(76, 103, 134, 0.1);
+  box-shadow: 0px 24px 48px rgba(76, 103, 134, 0.8);
+  padding: 4px 26px 0;
+  width: (360/1200)*100%;
+  text-align: center;
+  min-height: 494px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__pic {
+    margin: 0 auto;
+    margin-top: -200px;
+  }
+
+  &__img-wrapper {
+    position: relative;
+  }
+
+  &__pic--1, &__pic--2 {
+    width: (300/308)*100%;
+  }
+
+
+  &__pic--3 {
+    box-shadow: 0px 0px 48px rgba(76, 103, 134, 0.2);
+    width: (200/308)*100%;
+    background-color: grey;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -136px;
+    margin-bottom: 36px;
+  }
+
+  &__pic--1 &__img-wrapper,
+  &__pic--2 &__img-wrapper {
+    padding-top: 100%;
+  }
+
+  &__pic--3 &__img-wrapper {
+    padding-top: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333333;
+
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    padding: 0 6px;
+  }
+
+  &__btn {
+    margin-top: auto;
+    margin-bottom: -35px;
+  }
+}

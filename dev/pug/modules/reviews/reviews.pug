@@ -1,4 +1,5 @@
 include reviewsData
+include ../buttons/buttons
 
 mixin rev-block-slide(data)
   .rev-block-slide
@@ -12,7 +13,7 @@ mixin rev-block-slide(data)
           span!= data.implementationPeriod[1]
         .rev-block-slide__tabs.reviews-slide-tabs
           // tab-block
-          .reviews-slide-tabs__block.reviews-slide-tabs__block--1.reviews-slide-tabs__block--active
+          .reviews-slide-tabs__block(data-tab="0").reviews-slide-tabs__block--1.reviews-slide-tabs__block--active
             .reviews-slide-tabs__btn Задача
             .reviews-slide-tabs__content
               each tabItem in data.tabs.task
@@ -21,19 +22,19 @@ mixin rev-block-slide(data)
                     +icon('check')
                   .revies-tab-item__text!= tabItem
           // tab-block
-          .reviews-slide-tabs__block.reviews-slide-tabs__block--2
+          .reviews-slide-tabs__block(data-tab="1").reviews-slide-tabs__block--2
             .reviews-slide-tabs__btn Решение
             .reviews-slide-tabs__content
-              each tabItem in data.tabs.task
+              each tabItem in data.tabs.solution
                 .revies-tab-item
                   .revies-tab-item__icon
                     +icon('check')
                   .revies-tab-item__text!= tabItem
           // tab-block
-          .reviews-slide-tabs__block.reviews-slide-tabs__block--3
+          .reviews-slide-tabs__block(data-tab="2").reviews-slide-tabs__block--3
             .reviews-slide-tabs__btn Результат
             .reviews-slide-tabs__content
-              each tabItem in data.tabs.task
+              each tabItem in data.tabs.result
                 .revies-tab-item
                   .revies-tab-item__icon
                     +icon('check')
@@ -52,13 +53,65 @@ mixin rev-block-slide(data)
           .reviews-top__rev-block.rev-block
             .rev-block__nav-side
               ul.rev-block__nav-items
-                li.rev-block__nav-item.rev-block__nav-item--active.lazyBg(data-bg="url('static/images/reviews/europekrbank.png')")
-                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/ww.png')")
-                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/ashan.png')")
-                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/decathlon.png')")
-                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/avon.png')")
+                li.rev-block__nav-item.rev-block__nav-item--active.lazyBg(data-bg="url('static/images/reviews/europekrbank.png')" data-revslide="0")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/ww.png')" data-revslide="1")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/ashan.png')" data-revslide="2")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/decathlon.png')" data-revslide="3")
+                li.rev-block__nav-item.lazyBg(data-bg="url('static/images/reviews/avon.png')" data-revslide="4")
             .rev-block__main
               .rev-block__slider#rev-block-slider
                 each item in reviewsDataArray
                   +rev-block-slide(item)
+                  +rev-block-slide(item)
+                  +rev-block-slide(item)
+                  +rev-block-slide(item)
+                  +rev-block-slide(item)
+              .rev-block__btn-line
+                .rev-block__turquoise-btn
+                  +turquoise-btn-72('хочу также', 'rev-block-turquoise-btn', '', 'true')
+                button.rev-block__light-btn.gilroy-norm-16-26-tuna Подробнее о проекте
       .reviews__bottom
+        .audio-cards
+          .audio-cards__title.futpt-demi-50-55.futpt-demi-50-55--white 9 из 10 клиентов приходят к нам по рекомендации партнеров
+          .audio-cards__subtitle.futpt-normal-32-38 Мы позвонили нашим заказчикам и взяли отзыв по телефону
+          .audio-cards__cards
+            .audio-cards__column
+              .audio-cards__card.audio-card
+                .audio-card__logo
+                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/avon.png" alt="Avon").audio-card__logo-pic.lazyBg
+                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+                .audio-card__player
+                  audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
+                .audio-card__author
+                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+              .audio-cards__card.audio-card
+                .audio-card__logo
+                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/kredeurope.png" alt="Avon").audio-card__logo-pic.lazyBg
+                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+                .audio-card__player
+                  audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
+                .audio-card__author
+                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+            // audio-cards column 2
+            .audio-cards__column
+              .audio-cards__card.audio-card
+                .audio-card__logo
+                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/ashan.png" alt="Avon").audio-card__logo-pic.lazyBg
+                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+                .audio-card__player
+                  audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
+                .audio-card__author
+                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+              .audio-cards__card.audio-card
+                .audio-card__logo
+                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/ww.png" alt="Avon").audio-card__logo-pic.lazyBg
+                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+                .audio-card__player
+                  audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
+                .audio-card__author
+                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+        .reviews__more

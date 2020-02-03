@@ -1,0 +1,17 @@
+.next-step {
+  padding-top: 100px;
+
+  &__title {
+    max-width: 678px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 236px;
+  }
+}
+
+@import "next-step-card";

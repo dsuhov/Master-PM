@@ -1,0 +1,47 @@
+-
+  var nsData = [
+    {
+      title: '30 дней <br>бесплатного теста',
+      text: 'Предлагаем пилотный проект, <br>в рамках которого мы бесплатно <br>внедрим в вашей компании систему <br>управления печатью. Вы сможете <br>потестировать все функции без <br>ограничений в течение месяца и лично <br>убедиться в эффективности системы.',
+      btnText: 'забронировать место',
+      btnId: 'next-step-card-30-days-free',
+      picSrc: 'static/images/general/ns-printer.png',
+      extraClass: "next-step-card__pic--1"
+    },
+    {
+      title: 'Аудит инфраструктуры печати компании',
+      text: 'Проверим компанию по 78 параметрам, найдем уязвимые места в вашей инфраструктуре печати и поможем закрыть их.',
+      btnText: 'заказать аудит',
+      btnId: 'next-step-card-order-audit',
+      picSrc: 'static/images/general/ns-papers.png',
+      extraClass: "next-step-card__pic--2"
+    },
+    {
+      title: 'Консультация специалиста по системам управления печатью',
+      text: 'Ответим на вопросы, расскажем о работе СУП и возможных решениях, поможет подобрать подходящее программное обеспечение для вашей инфраструктуры печати.',
+      btnText: 'получить консультацию',
+      btnId: 'next-step-card-get-consult',
+      picSrc: 'static/images/general/ns-man.jpg',
+      extraClass: "next-step-card__pic--3"
+    },
+  ];
+
+include ../buttons/buttons
+
+mixin next-step-card(data)
+  .next-step-card
+    .next-step-card__pic(class=""+data.extraClass)
+      .next-step-card__img-wrapper
+        img(src="static/images/general/empty.png" data-src=""+data.picSrc alt=""+data.title).next-step-card__img.lazyBg
+    h3.next-step-card__title!= data.title
+    p.next-step-card__text.futpt-normal-18-25-tuna!= data.text
+    .next-step-card__btn
+      +turquoise-btn-72(data.btnText, data.btnId, '', true)
+
+
+.next-step
+  .next-step__title.futpt-demi-50-55 <span class="em-blue">Сделайте следующий шаг</span> <br>в сторону эффективной <br>печати прямо сейчас
+  .container
+    .next-step__cards
+      each item in nsData
+        +next-step-card(item)
