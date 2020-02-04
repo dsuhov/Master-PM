@@ -2,6 +2,10 @@
   padding-top: 316px;
   background: url(../images/general/reviews-bg.svg) center top 150px / 100% auto no-repeat;
 
+  @media (max-width: 1430px) {
+    background-size: 1920px auto;
+  }
+
   &__content {
 
   }
@@ -10,8 +14,35 @@
 
   }
 
+
+  &__audio-cards {
+    margin-bottom: 68px;
+  }
+  
   &__bottom {
     padding-top: 178px;
+  }
+
+  &__more {
+    text-align: center;
+
+    button {
+      display: inline;
+      cursor: pointer;
+      font-family: 'Gilroy';
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      font-size: 16px;
+      line-height: 160%;
+      text-transform: uppercase;
+      text-align: center;
+      color: $royal-blue;
+    }
+    
+
+    &::after {
+
+    }
   }
 }
 

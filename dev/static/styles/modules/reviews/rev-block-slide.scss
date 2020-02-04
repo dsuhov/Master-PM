@@ -26,6 +26,10 @@
 
   &__title {
     margin-bottom: 26px;
+
+    @media (max-width: 950px) {
+      br {display: none}
+    }
   }
 
 

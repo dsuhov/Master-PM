@@ -22,7 +22,7 @@ $(document).ready(function () {
     modernSoftSlider();
     reviewsTabsInit();
     reviewsSliderInit();
-    playerControlSettings();
+    // yamapsInit();
   }
   
 });
@@ -239,19 +239,22 @@ function economyCardsActions() {
   
   function reviewsTabsInit() {
     const tabsContainer = $('.reviews-slide-tabs');
-    
-    tabsContainer.each(function(_) {
-      $(tabsContainer[_]).find('.reviews-slide-tabs__block').each(function(el) {
-        $(this).find('.reviews-slide-tabs__btn').each(function() {
-          this.addEventListener('click', () => {
-            $(this).closest('.reviews-slide-tabs').find('.reviews-slide-tabs__block').removeClass('reviews-slide-tabs__block--active');
-            $(this).parent().addClass('reviews-slide-tabs__block--active');
-          })
-        });
+
+    if (window.matchMedia('(min-width: 951px)').matches) {
+      tabsContainer.each(function(_) {
+        $(tabsContainer[_]).find('.reviews-slide-tabs__block').each(function(el) {
+          $(this).find('.reviews-slide-tabs__btn').each(function() {
+            this.addEventListener('click', () => {
+              $(this).closest('.reviews-slide-tabs').find('.reviews-slide-tabs__block').removeClass('reviews-slide-tabs__block--active');
+              $(this).parent().addClass('reviews-slide-tabs__block--active');
+            })
+          });
+          
+        })
         
-      })
-      
-    });
+      });
+    }
+    
   }
   
   function reviewsSliderInit() {
@@ -274,14 +277,31 @@ function economyCardsActions() {
     });
   }
   
-function playerControlSettings() {
-  // var player = new OpenPlayer('player_1', false, {
-  //   controls: {
-  //     left: ['play', 'time', 'volumes'],
-  //     middle: ['progress'],
-  //     right: ['captions', 'settings', 'fullscreen'],
-  //   },
-  // });
+function yamapsInit() {
+  ymaps.ready(init);
 
-  // player.init();
-}
+  function init(){
+
+      var myMap = new ymaps.Map("yaMap", {
+
+        center: [55.736731, 37.712946],
+        zoom: 15,
+        controls: ['smallMapDefaultSet']
+      }, {
+        searchControlProvider: 'yandex#search'
+      });
+
+      var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+        hintContent: 'Мастер-РМ',
+        balloonContent: 'г. Москва, ул.Смирновская, д.25, стр.10'
+      }, {
+        iconLayout: 'default#image',
+        iconImageHref: 'static/images/general/map-pin.png',
+        iconImageSize: [148, 160],
+        iconImageOffset: [-74, -80]
+      });
+
+      myMap.geoObjects
+        .add(myPlacemark);
+  }
+};

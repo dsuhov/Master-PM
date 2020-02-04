@@ -1,18 +1,28 @@
 .reviews-slide-tabs {
-  // height: 200px;
-  // background-color: rgba(45, 78, 69, 0.5);
   width: 100%;
   position: relative;
-
   display: flex;
+
+  @media (max-width: 950px) {
+    position: static;
+    display: block;
+  }
 
   &__block {
     flex: 1 1 33.333333%;
     width: 33.333333%;
+
+    @media (max-width: 950px) {
+      width: 100%;
+    }
   }
 
   &__block &__content {
     display: none;
+
+    @media (max-width: 950px) {
+      display: block;
+    }
   }
 
   &__btn {
@@ -24,6 +34,34 @@
     color: $tuna;
     padding: 14px 0;
     text-align: center;
+    
+    @media (max-width: 950px) {
+      padding: (62px-26px)/2 28px ;
+      margin-bottom: 35px;
+      text-align: left;
+
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 13px;
+        height: 8px;
+        top: 50%;
+        transform: translateY(-4px);
+        right: 34px;
+        background-size: 100%;
+        background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' fill='%232F7EEF' clip-rule='evenodd' d='M0.292893 8.20711C-0.0976311 7.81658 -0.097631 7.18342 0.292893 6.79289L6.5 0.585787L12.7071 6.79289C13.0976 7.18342 13.0976 7.81658 12.7071 8.20711C12.3166 8.59763 11.6834 8.59763 11.2929 8.20711L6.5 3.41421L1.70711 8.20711C1.31658 8.59763 0.683417 8.59763 0.292893 8.20711Z' /></svg>");
+      }
+    }
+  }
+
+  &__block.reviews-slide-tabs__block--active &__btn {
+    @media (max-width: 950px) {
+      &::after {
+        transform: translateY(-4px) rotate(180deg);
+      }
+    }
   }
 
   &__content {
@@ -31,21 +69,46 @@
     top: 96px;
     left: 0;
     width: 100%;
+
+    @media (max-width: 950px) {
+      position: static;
+    }
   }
 
   &__block--1 &__btn {
     border: 1px solid #DBEAFF;
     border-radius: 20px 0 0 20px;
+
+    @media (max-width: 950px) {
+      border: none;
+      border-radius: 0;
+      border-top: 1px solid #E8EEFF;
+      border-bottom: 1px solid #E8EEFF;
+    }
   }
 
   &__block--2 &__btn {
+    border: none;
     border-top: 1px solid #DBEAFF;
     border-bottom: 1px solid #DBEAFF;
+
+    @media (max-width: 950px) {
+      border-radius: 0;
+      border-top: 1px solid #E8EEFF;
+      border-bottom: 1px solid #E8EEFF;
+    }
   }
 
   &__block--3 &__btn {
+    border: none;
     border: 1px solid #DBEAFF;
     border-radius: 0 20px 20px 0;
+
+    @media (max-width: 950px) {
+      border-radius: 0;
+      border-top: 1px solid #E8EEFF;
+      border-bottom: 1px solid #E8EEFF;
+    }
   }
 
   &__block.reviews-slide-tabs__block--active &__btn,
@@ -53,6 +116,12 @@
     border-color: $royal-blue;
     background-color: $royal-blue;
     color: $white;
+
+    @media (max-width: 950px) {
+      border-color: #DBEAFF;
+      background-color: transparent;
+      color: $tuna;
+    }
   }
 
   &__block.reviews-slide-tabs__block--active &__content {

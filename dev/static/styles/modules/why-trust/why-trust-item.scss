@@ -1,6 +1,18 @@
 .why-trust-item {
   display: flex;
 
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+  }
+
+  @media (max-width: 400px) {
+    display: block;
+  }
+
   &__icon {
     flex: 0 0 76px;
     width: 76px;
@@ -13,6 +25,19 @@
     align-items: center;
 
     margin-right: 30px;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 750px) {
+      margin-right: 30px;
+    }
+
+    @media (max-width: 400px) {
+      margin-right: 0;
+    }
 
     .icon-long-check {
       fill: $royal-blue;
@@ -34,6 +59,10 @@
       font-family: 'Futura PT Demi';
       font-weight: 500;
     }
+
+    @media (max-width: 768px) {
+      br {display: none}
+    }
   }
 
   &__logo {
@@ -41,5 +70,13 @@
     height: 49px;
     background-size: 100%;
     margin-left: 108px;
+
+    @media (max-width: 750px) {
+      margin: 0 auto;
+    }
+
+    @media (max-width: 400px) {
+      margin: 0;
+    }
   }
 }

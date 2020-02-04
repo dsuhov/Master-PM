@@ -3,6 +3,7 @@ extends template/main
 block variables
 	- var title = 'Мастер-РМ | Общее';
 	- var pageId = 'page-all';
+	- var yamaps = false;
 
 block content
 	include ./modules/header/header
@@ -15,6 +16,7 @@ block content
 		include ./modules/weak-spots/weak-spots
 		include ./modules/why-trust/why-trust
 	include ./modules/reviews/reviews
-	include ./modules/next-step/next-step
-	include ./modules/footer/footer
-	.dummy(style="height: 500px; background-color: #ccc")
+	div(style="display: none")
+		include ./modules/next-step/next-step
+		include ./modules/footer/footer
+	//- .dummy(style="height: 500px; background-color: #ccc")

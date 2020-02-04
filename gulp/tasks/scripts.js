@@ -11,7 +11,7 @@ module.exports = function () {
         return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js',
                             'node_modules/vanilla-lazyload/dist/lazyload.min.js',
                             'node_modules/aos/dist/aos.js',
-                            'node_modules/slick-carousel/slick/slick.min.js',
+                            'node_modules/slick-carousel/slick/slick.js',
                             'node_modules/openplayerjs/dist/openplayer.min.js'])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.output));
@@ -21,8 +21,8 @@ module.exports = function () {
         return $.gulp.src(['node_modules/svg4everybody/dist/svg4everybody.min.js', 
                             'node_modules/vanilla-lazyload/dist/lazyload.min.js',
                             'node_modules/aos/dist/aos.js',
-                            'node_modules/slick-carousel/slick/slick.min.js',
-                            'node_modules/openplayerjs/dist/openplayer.min.js'])
+                            'node_modules/slick-carousel/slick/slick.js',
+                            'node_modules/openplayerjs/dist/openplayer.js'])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.output));

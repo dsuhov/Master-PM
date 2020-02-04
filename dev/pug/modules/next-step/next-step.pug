@@ -6,7 +6,8 @@
       btnText: 'забронировать место',
       btnId: 'next-step-card-30-days-free',
       picSrc: 'static/images/general/ns-printer.png',
-      extraClass: "next-step-card__pic--1"
+      extraClass: "next-step-card__pic--1",
+      delay: '0'
     },
     {
       title: 'Аудит инфраструктуры печати компании',
@@ -14,7 +15,8 @@
       btnText: 'заказать аудит',
       btnId: 'next-step-card-order-audit',
       picSrc: 'static/images/general/ns-papers.png',
-      extraClass: "next-step-card__pic--2"
+      extraClass: "next-step-card__pic--2",
+      delay: '200'
     },
     {
       title: 'Консультация специалиста по системам управления печатью',
@@ -22,14 +24,15 @@
       btnText: 'получить консультацию',
       btnId: 'next-step-card-get-consult',
       picSrc: 'static/images/general/ns-man.jpg',
-      extraClass: "next-step-card__pic--3"
+      extraClass: "next-step-card__pic--3",
+      delay: '400'
     },
   ];
 
 include ../buttons/buttons
 
 mixin next-step-card(data)
-  .next-step-card
+  .next-step-card(data-aos="fade-up" data-aos-delay=""+data.delay)
     .next-step-card__pic(class=""+data.extraClass)
       .next-step-card__img-wrapper
         img(src="static/images/general/empty.png" data-src=""+data.picSrc alt=""+data.title).next-step-card__img.lazyBg
