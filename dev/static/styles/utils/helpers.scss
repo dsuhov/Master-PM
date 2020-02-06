@@ -101,3 +101,54 @@
     transform: scale(1.5);
   }
 }
+
+.quizPopup {
+  width: 1200px;
+}
+
+.fancybox-content {
+  background-color: transparent !important;
+
+  @media (max-width: 360px) {
+    padding:  34px 0px 0 !important;
+  }
+}
+
+#quiz-form-copy {
+  box-shadow: none;
+}
+
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #D4DBEF;
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 360px) {
+    width: 28px;
+    height: 28px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

@@ -23,6 +23,8 @@ $(document).ready(function () {
     reviewsTabsInit();
     reviewsSliderInit();
     // yamapsInit();
+    fancyboxInitLogic();
+    navLine();
   }
   
 });
@@ -240,20 +242,32 @@ function economyCardsActions() {
   function reviewsTabsInit() {
     const tabsContainer = $('.reviews-slide-tabs');
 
-    if (window.matchMedia('(min-width: 951px)').matches) {
-      tabsContainer.each(function(_) {
-        $(tabsContainer[_]).find('.reviews-slide-tabs__block').each(function(el) {
-          $(this).find('.reviews-slide-tabs__btn').each(function() {
-            this.addEventListener('click', () => {
+    if (window.matchMedia('(max-width: 950px)').matches) {
+      $('.reviews-slide-tabs__block--1.reviews-slide-tabs__block--open .reviews-slide-tabs__content').slideDown();
+    }
+
+    tabsContainer.each(function(_) {
+      $(tabsContainer[_]).find('.reviews-slide-tabs__block').each(function(el) {
+        $(this).find('.reviews-slide-tabs__btn').each(function() {
+          this.addEventListener('click', () => {
+
+
+            if (window.matchMedia('(max-width: 950px)').matches) {
+              $(this).next().slideToggle();
+
+              if ($(this).parent().hasClass('reviews-slide-tabs__block--open')) {
+                $(this).parent().removeClass('reviews-slide-tabs__block--open');
+              } else {
+                $(this).parent().addClass('reviews-slide-tabs__block--open');
+              }
+            } else {
               $(this).closest('.reviews-slide-tabs').find('.reviews-slide-tabs__block').removeClass('reviews-slide-tabs__block--active');
               $(this).parent().addClass('reviews-slide-tabs__block--active');
-            })
-          });
-          
-        })
-        
-      });
-    }
+            }
+          })
+        });
+      })
+    });
     
   }
   
@@ -263,9 +277,11 @@ function economyCardsActions() {
     
     slider.slick({
       infinite: false,
-      arrows: false,
+      arrows: true,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      prevArrow: '#slider-arrow__rev-block--prev',
+      nextArrow: '#slider-arrow__rev-block--next'
     });
     
     navBtns.click(function() {
@@ -305,3 +321,44 @@ function yamapsInit() {
         .add(myPlacemark);
   }
 };
+
+
+// Fancybox
+function fancyboxInitLogic() {
+  // Set fancybox close btn
+  $.fancybox.defaults.btnTpl.smallBtn = '<button type="button" data-fancybox-close class="close-btn" title="{{CLOSE}}"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 13.293L13.293 0.292969L14.7072 1.70718L1.70718 14.7072L0.292969 13.293Z" fill="#2F7EEF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.707 13.293L1.70703 0.292969L0.292818 1.70718L13.2928 14.7072L14.707 13.293Z" fill="#2F7EEF"/></svg></button>';
+
+  // Open quiz on Calc Price Button
+  const calcPriceBtn = document.getElementById('ms-calc-price');
+  const quizCopy = document.getElementById('quiz-form').cloneNode(true);
+  quizCopy.id = quizCopy.id + '-copy';
+
+  const quizWrapper = document.createElement('div');
+  quizWrapper.classList.add('quizPopup');
+  quizWrapper.appendChild(quizCopy);
+
+  calcPriceBtn.addEventListener('click', () => {
+    $.fancybox.open('<div>' + quizWrapper.innerHTML + '</div>');
+  })
+}
+
+// navigation line
+function navLine() {
+  let scrollActive = false;
+  const navLine = document.querySelector('.header__navigation');
+  const headerEl = document.querySelector('.header');
+
+  window.addEventListener('scroll', (evt) => {
+
+    if (window.pageYOffset > 0 && !scrollActive) {
+      scrollActive = true;
+      navLine.classList.add('floating');
+      headerEl.classList.add('floating');
+    } else if (window.pageYOffset === 0 && scrollActive) {
+      scrollActive = false;
+      navLine.classList.remove('floating');
+      headerEl.classList.remove('floating');
+    }
+
+  })
+}

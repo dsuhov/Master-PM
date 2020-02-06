@@ -6,6 +6,10 @@
     max-width: 730px;
     margin: 0 auto;
     margin-bottom: 25px;
+
+    @media (max-width: 720px) {
+      margin-bottom: 35px;
+    }
   }
 
   &__subtitle {
@@ -13,10 +17,18 @@
     max-width: 470px;
     margin: 0 auto;
     margin-bottom: 62px;
+
+    @media (max-width: 720px) {
+      margin-bottom: 48px;
+    }
   }
 
   &__cards {
     display: flex;
+
+    @media (max-width: 720px) {
+      display: block;
+    }
   }
 
   &__column {
@@ -24,10 +36,18 @@
 
     &:first-child {
       margin-right: (60/1200)*100%;
+
+      @media (max-width: 720px) {
+        margin-right: 0;
+      }
     }
 
     &:last-child {
       padding-top: 80px;
+
+      @media (max-width: 720px) {
+        padding-top: 0;
+      }
     }
   }
 
@@ -36,6 +56,18 @@
 
     &:not(:last-child) {
       margin-bottom: 60px;
+
+      @media (max-width: 400px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 400px) {
+      margin-bottom: 20px;
     }
   }
 }

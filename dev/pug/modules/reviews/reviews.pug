@@ -1,5 +1,6 @@
 include reviewsData
 include ../buttons/buttons
+include ../components/slider-arrows
 
 mixin rev-block-slide(data)
   .rev-block-slide
@@ -13,7 +14,7 @@ mixin rev-block-slide(data)
           span!= data.implementationPeriod[1]
         .rev-block-slide__tabs.reviews-slide-tabs
           // tab-block
-          .reviews-slide-tabs__block(data-tab="0").reviews-slide-tabs__block--1.reviews-slide-tabs__block--active
+          .reviews-slide-tabs__block(data-tab="0").reviews-slide-tabs__block--1.reviews-slide-tabs__block--active.reviews-slide-tabs__block--open
             .reviews-slide-tabs__btn Задача
             .reviews-slide-tabs__content
               each tabItem in data.tabs.task
@@ -51,6 +52,11 @@ mixin rev-block-slide(data)
             .reviews-top__over-item Защитить данные
             .reviews-top__over-item Оптимизировать печать
           .reviews-top__rev-block.rev-block
+            .rev-block__nav-arrows
+              .rev-block__nav-arrows-prev
+                +slider-arrows('prev', 'rev-block')
+              .rev-block__nav-arrows-next
+                +slider-arrows('next', 'rev-block')
             .rev-block__nav-side
               ul.rev-block__nav-items
                 li.rev-block__nav-item.rev-block__nav-item--active.lazyBg(data-bg="url('static/images/reviews/europekrbank.png')" data-revslide="0")

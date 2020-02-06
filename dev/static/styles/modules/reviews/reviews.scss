@@ -6,14 +6,12 @@
     background-size: 1920px auto;
   }
 
-  &__content {
-
+  @media (max-width: 400px) {
+    background-size: 2550px auto;
+    background-position: center top 10px;
+    //background: url(../images/general/reviews-bg.svg) center top 10px / 100% auto no-repeat;
+    padding-top: 130px;
   }
-
-  &__top {
-
-  }
-
 
   &__audio-cards {
     margin-bottom: 68px;
@@ -21,6 +19,10 @@
   
   &__bottom {
     padding-top: 178px;
+
+    @media (max-width: 720px) {
+      padding-top: 90px;
+    }
   }
 
   &__more {
@@ -37,11 +39,6 @@
       text-transform: uppercase;
       text-align: center;
       color: $royal-blue;
-    }
-    
-
-    &::after {
-
     }
   }
 }

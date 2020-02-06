@@ -2,11 +2,25 @@
   padding-top: 365px;
   background: url('../images/general/footer-bg.svg') center bottom / 1920px auto no-repeat;
 
+  @media (max-width: 950px) {
+    background: url('../images/general/footer-bg.svg') center bottom / 2430px auto no-repeat;
+  }
+
+  @media (max-width: 400px) {
+    padding-top: 205px;
+    background: url('../images/general/footer-bg.svg') center bottom / 2410px auto no-repeat;
+  }
+
   &__title {
     max-width: 760px;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 28px;
+
+    @media (max-width: 400px) {
+      padding: 0 6px;
+      margin-bottom: 23px;
+    }
   }
 
   &__subtitle {
@@ -14,10 +28,19 @@
     text-align: center;
     margin: 0 auto;
     margin-bottom: 64px;
+
+    @media (max-width: 400px) {
+      br {display: none}
+      margin-bottom: 42px;
+    }
   }
 
   &__middle-line {
     display: flex;
+
+    @media (max-width: 950px) {
+      display: block;
+    }
   }
 
   &__map {
@@ -25,6 +48,18 @@
     width: (793/1200)*100%;
     height: 483px;
     background-color: #7a7a7a;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media (max-width: 560px) {
+      height: 300px;
+    }
+
+    @media (max-width: 400px) {
+      height: 194px;
+    }
   }
 
   &__info {
@@ -33,6 +68,15 @@
 
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 950px) {
+      padding-top: 20px;
+      margin-left: 0;
+    }
+
+    @media (max-width: 400px) {
+      padding-top: 58px;
+    }
   }
 
   &__address-block {
@@ -47,6 +91,15 @@
 
   &__phone-block {
     margin-left: 26px;
+
+    @media (max-width: 950px) {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 400px) {
+      margin-bottom: 40px;
+    }
   }
 
   &__additional-info {
@@ -57,6 +110,10 @@
     color: $white;
     margin-top: auto;
     margin-left: 32px;
+
+    @media (max-width: 950px) {
+      margin-left: 0;
+    }
   }
 }
 
@@ -88,6 +145,9 @@
   position: relative;
   padding-left: 84px;
 
+  @media (max-width: 400px) {
+    padding-top: 4px;
+  }
 
   &__phone-icon {
     position: absolute;
@@ -103,10 +163,6 @@
     align-items: center;
   }
 
-  &__contacts {
-
-  }
-
   &__phone {
     &:hover {text-decoration: underline;}
     font-family: 'Futura PT Demi';
@@ -114,15 +170,17 @@
     font-size: 22px;
     line-height: 138.5%;
     color: $white;
-    vertical-align: middle;
     display: inline;
 
     span {
       font-family: 'Futura PT Book';
       font-weight: normal;
       font-size: 14px;
-      line-height: 100%;
-      vertical-align: middle;
+      line-height: 138.5%;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 18px;
     }
   }
 
@@ -151,6 +209,12 @@
   // min-height: 82px;
   padding: (82px - 20px)/2 0;
 
+  @media (max-width: 560px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 72px 0 44px 3px;
+  }
+
   a {
     color: inherit;
     font-family: inherit;
@@ -158,5 +222,18 @@
     font-size: inherit;
     line-height: inherit;
     &:hover {text-decoration: underline;}
+  }
+
+  a, span {
+    @media (max-width: 560px) {
+      display: block;
+      margin-bottom: 7px;
+    }
+  }
+
+  span {
+    @media (max-width: 560px) {
+      order: -1;
+    }
   }
 }

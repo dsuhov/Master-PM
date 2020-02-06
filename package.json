@@ -32,6 +32,7 @@
     "imagemin-jpeg-recompress": "^6.0.0"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "aos": "^3.0.0-beta.6",
     "normalize.css": "^8.0.1",
     "openplayerjs": "^1.14.5",

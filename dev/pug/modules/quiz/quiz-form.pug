@@ -31,7 +31,7 @@ mixin companyCkeckbox(name, logoSrc, alt)
   label.quiz-form__company-btn
     input(type="checkbox" name=""+name value=""+alt).quiz-form__company-input
     .quiz-form__company-logo
-      img(src="" data-src=`static/images/test/${logoSrc}.png` alt=""+alt).lazyBg
+      img(src=`static/images/test/${logoSrc}.png` alt=""+alt)
 
 mixin whiteRadio(text, name, checked)
   label.whiteRadioBtn
@@ -102,7 +102,7 @@ form(action="" method="post" id="quiz-form").quiz-form
         a(href="#").quiz-form__quiz-list-link скачать опросный лист <br>для специалистов
       .quiz-form__accept-conf
         label.quiz-form__ac-label
-          input(type="checkbox" name="accept-conf").quiz-form__ac-checkbox
+          input(type="checkbox" name="accept-conf" checked).quiz-form__ac-checkbox
           .quiz-form__ac-icon
             +icon('white-checkbox')
           .quiz-form__ac-icon.quiz-form__ac-icon--checked

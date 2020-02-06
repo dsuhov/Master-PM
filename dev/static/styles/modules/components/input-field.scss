@@ -35,13 +35,13 @@
 
   &.input-field--gbold {
     font-family: 'Gilroy';
-    font-weight: 800;
+    font-weight: normal;
     font-size: 16px;
     line-height: 26px;
 
     @include placeholder() {
       font-family: 'Gilroy';
-      font-weight: 800;
+      font-weight: normal;
       font-size: 16px;
       line-height: 26px;
     }

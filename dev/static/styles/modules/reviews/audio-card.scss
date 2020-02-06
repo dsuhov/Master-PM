@@ -6,8 +6,16 @@
 
   padding: 56px 75px 86px 67px;
 
+  @media (max-width: 400px) {
+    padding: 42px 26px 60px;
+  }
+
   &__logo {
     margin-bottom: 40px;
+
+    @media (max-width: 400px) {
+      margin-bottom: 32px;
+    }
   }
 
   &__text {
