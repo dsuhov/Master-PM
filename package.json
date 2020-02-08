@@ -33,7 +33,9 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "Datepicker.js": "^0.1.1",
     "aos": "^3.0.0-beta.6",
+    "imask": "^6.0.1",
     "normalize.css": "^8.0.1",
     "openplayerjs": "^1.14.5",
     "slick-carousel": "^1.8.1",

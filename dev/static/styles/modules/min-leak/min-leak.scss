@@ -1,0 +1,63 @@
+.min-leak {
+
+  &__title {
+    text-align: center;
+
+    @media (max-width: 400px) {
+      text-align: left;
+    }
+  }
+
+  &__blocks {
+    padding-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 560px) {
+      display: block;
+      padding-top: 48px;
+    }
+  }
+
+  &__block {
+    width: (570/1200)*100%;
+
+    margin-bottom: 70px;
+
+    @media (max-width: 560px) {
+      width: 100%;
+      margin-bottom: 65px;
+    }
+  }
+}
+
+.s-min-leak {
+  padding-top: 142px;
+}
+
+// minimize leak block
+.min-leak-block {
+
+  &__pic {
+    box-shadow: 0 0 80px rgba(47, 112, 205, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin-bottom: 32px;
+
+    @media (max-width: 400px) {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__text {
+    max-width: (450/570)*100%;
+
+    @media (max-width: 1110px) {
+      max-width: none;
+      br {display: none}
+      padding-right: 26px;
+    }
+  }
+}

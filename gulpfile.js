@@ -9,6 +9,11 @@ global.$ = {
     del: require('del')
 };
 
+$.gulp.task('copyCss', function() {
+    return $.gulp.src('./dev/static/styles/*.css')
+        .pipe($.gulp.dest('./build/static/css/'));
+});
+
 $.path.task.forEach(function (taskPath) {
     require(taskPath)();
 });
@@ -22,7 +27,8 @@ $.gulp.task('dev', $.gulp.series(
         'img:dev',
         'libsJS:dev',
         'js:dev',
-        'svg'
+        'svg',
+        'copyCss'
     )
 ));
 
@@ -35,7 +41,8 @@ $.gulp.task('build', $.gulp.series(
         'img:build',
         'libsJS:build',
         'js:build',
-        'svg'
+        'svg',
+        'copyCss'
     )
 ));
 

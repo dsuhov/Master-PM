@@ -1,0 +1,31 @@
+-
+  var minleakData = [
+    {
+      src: 'static/images/general/ml-1.jpg',
+      text: '<b>Печать документа</b> доступна пользователю только после авторизации с помощью карты доступа.'
+    },{
+      src: 'static/images/general/ml-2.jpg',
+      text: '<b>Запрещает печать <br>определенных документов,</b> например файлов с названием типа «финансовая отчетность.doc»'
+    },{
+      src: 'static/images/general/ml-3.jpg',
+      text: 'Отправленные на печать <br>документы <b>не остаются забытыми в <br>принтере</b> и не попадают в чужие руки'
+    },{
+      src: 'static/images/general/ml-4.jpg',
+      text: 'Благодаря истории распечаток и <br>электронным слепкам <b>Вы знаете, какой <br>документ распечатал пользователь</b> <br>и когда он это сделал.'
+    },
+  ];
+
+mixin min-leak-block(data)
+  .min-leak-block
+    .min-leak-block__pic
+      img(src=""+data.src).min-leak-block__img
+    p.min-leak-block__text.futpt-normal-24-34-tuna-b!= data.text
+
+.s-min-leak
+  .container
+    .min-leak
+      .min-leak__title.futpt-demi-50-55 <span class="em-blue">Система минимизирует <br>утечку</span> и потерю данных при <br>печати и копировании документов
+      .min-leak__blocks
+        each item in minleakData
+          .min-leak__block
+            +min-leak-block(item)

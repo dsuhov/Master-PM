@@ -1,0 +1,26 @@
+include ../components/input-field
+
+-
+  var popupLeftPhoneData = {
+    type: 'tel',
+    id: 'popup-photo-inpphone',
+    classModifier: 'popup-phone input-field--grey-border input-field--popup input-field--64',
+    placeholder: '+7 (___) ___-__-__'
+  }
+
+
+.popup-container
+  .popup#popup-left-phone
+    .popup__close
+      include ../components/close-btn
+    .popup-photo
+      .popup-photo__inner
+        .popup-photo__title.popup__title Оставьте ваш <span class="em-blue">телефон</span>
+        .popup-photo__subtitle.popup__subtitle Я перезвоню в удобное для вас время и <br>отвечу на все интересующие вопросы.
+        form(action="" method="post" id="popup-photo-form").popup-photo__form
+          .popup-photo__choose-time-radio
+            include choose-time-radio
+          .popup-photo__choose-time-field.popup-mb20
+            include time-field
+          .popup-photo__phone-field
+            +input-field(popupLeftPhoneData)

@@ -1,12 +1,13 @@
 extends template/main
 
 block variables
-	- var title = 'Мастер-РМ | Общее';
-	- var pageId = 'page-all';
+	- var title = 'Мастер-РМ | Коммерция';
+	- var pageId = 'page-commercial';
 	- var yamaps = false;
 
 block content
 	include ./modules/header/header
+	include ./modules/get-audit/get-audit
 	include ./modules/economy/economy
 	include ./modules/how-it-works/how-it-works
 	include ./modules/service/service
@@ -17,4 +18,3 @@ block content
 	include ./modules/reviews/reviews
 	include ./modules/next-step/next-step
 	include ./modules/footer/footer
-	include ./modules/popups/popups

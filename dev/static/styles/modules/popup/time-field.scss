@@ -1,0 +1,32 @@
+.time-field {
+  position: relative;
+  width: 100%;
+
+  font-family: 'Futura PT Book';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  &__field {
+    width: 100%;
+    padding: (64px-26px)/2 62px;
+    border: 1px solid #D4DBEF;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+
+    left: 30px;
+    top: (64px-24px)/2;
+  }
+
+  .icon-calendar {
+    width: 24px;
+    height: 24px;
+    fill: #47D1F2;
+  }
+}

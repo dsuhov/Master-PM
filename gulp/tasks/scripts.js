@@ -13,7 +13,9 @@ module.exports = function () {
                             'node_modules/aos/dist/aos.js',
                             'node_modules/slick-carousel/slick/slick.js',
                             'node_modules/openplayerjs/dist/openplayer.min.js',
-                            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js'])
+                            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+                            'node_modules/Datepicker.js/dist/datepicker.js',
+                            'node_modules/imask/dist/imask.js'])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.output));
     });
@@ -24,7 +26,9 @@ module.exports = function () {
                             'node_modules/aos/dist/aos.js',
                             'node_modules/slick-carousel/slick/slick.js',
                             'node_modules/openplayerjs/dist/openplayer.js',
-                            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js'])
+                            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+                            'node_modules/Datepicker.js/dist/datepicker.js',
+                            'node_modules/imask/dist/imask.js'])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
             .pipe($.gulp.dest(scriptsPATH.output));

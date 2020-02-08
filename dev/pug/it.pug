@@ -1,0 +1,18 @@
+extends template/main
+
+block variables
+  - var title = 'Мастер-РМ | IT';
+  - var pageId = 'page-it';
+  - var yamaps = false;
+
+block content
+  include ./modules/header/header
+  include ./modules/modern-soft/modern-soft
+  include ./modules/weak-spots/weak-spots
+  include ./modules/service/service
+  include ./modules/how-it-works/how-it-works
+  include ./modules/quiz/quiz
+  include ./modules/why-trust/why-trust
+  include ./modules/reviews/reviews
+  include ./modules/next-step/next-step
+  include ./modules/footer/footer

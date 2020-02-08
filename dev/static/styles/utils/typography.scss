@@ -58,6 +58,24 @@
   }
 }
 
+.futpt-normal-24-34-tuna-b {
+  font-family: 'Futura PT Book';
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 34px;
+  color: $tuna;
+
+  b {
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
 .futpt-normal-24-34-tuna {
   font-family: 'Futura PT Book';
   font-weight: normal;

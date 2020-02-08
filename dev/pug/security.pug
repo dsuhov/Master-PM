@@ -1,0 +1,19 @@
+extends template/main
+
+block variables
+  - var title = 'Мастер-РМ | Безопасность';
+  - var pageId = 'page-security';
+  - var yamaps = false;
+
+block content
+  include ./modules/header/header-security
+  include ./modules/min-leak/min-leak
+  include ./modules/how-it-works/how-it-works
+  include ./modules/service/service
+  include ./modules/modern-soft/modern-soft
+  include ./modules/quiz/quiz
+  include ./modules/weak-spots/weak-spots
+  include ./modules/why-trust/why-trust
+  include ./modules/reviews/reviews
+  include ./modules/next-step/next-step
+  include ./modules/footer/footer

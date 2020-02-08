@@ -33,6 +33,10 @@
     @media (max-width: 400px) {
       display: block;
     }
+
+    &.routing__buttons--ty {
+      justify-content: center;
+    }
   }
 
   &__button {

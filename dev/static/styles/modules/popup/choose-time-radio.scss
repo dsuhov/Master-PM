@@ -1,0 +1,56 @@
+.choose-time-radio {
+
+  &__heading {
+    font-family: 'Futura PT Book';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+    color: $tuna;
+  }
+
+  &__line {
+    padding-top: 13px;
+    display: flex;
+    //align-items: center;
+  }
+
+  &__btn:first-child {
+    margin-right: 17px;
+  }
+
+  &__btn {
+    input {
+      display: none;
+    }
+
+    label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      padding-left: 40px;
+      height: 28px;
+    }
+
+    input:checked + .choose-time-radio__pimp {
+      background: $white;
+      border: 7.2px solid $royal-blue;
+    }
+  }
+
+  &__pimp {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #E8EEFF;
+    transition: border 0.2s linear;
+    border: none;
+
+    top: 0;
+    left: 0;
+  }
+
+  &__text {
+
+  }
+}
