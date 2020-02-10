@@ -1,0 +1,32 @@
+include ../components/input-field
+include ../buttons/buttons
+
+-
+  var popupQuestionnaireData = {
+    type: 'email',
+    id: 'questionnaire-email',
+    classModifier: 'questionnaire-email input-field--grey-border input-field--popup input-field--64',
+    placeholder: 'Pochta@mail.ru'
+  }
+
+#popup-popup-questionnaire.popup-hidden
+  .popup-container
+    .popup
+      .popup__close
+        include ../components/close-btn
+      .popup-questionnaire
+        .popup-questionnaire__letter(data-bg="url('static/images/general/Letterhead.png')").lazyBg
+        .popup-questionnaire__glare(data-bg="url('static/images/general/Ellipse76.png')").lazyBg
+        a(href="#").popup-questionnaire__pdf
+          +icon('mdi_file-excel')
+          span 3,4 MB
+        .popup-questionnaire__main
+          .popup-questionnaire__title <span class="em-blue">На какую почту</span> прислать <br>опросный лист?
+          .popup-questionnaire__subtitle.futpt-normal-24-34-tuna с полным перечнем функций и техническим описанием.
+          form(action="" method="post").popup-questionnaire__form
+            .popup-questionnaire__email.popup-mb20
+              +input-field(popupQuestionnaireData)
+            .popup-questionnaire__btn
+              +turquoise-btn-72-submit('получить презентацию', 'questionnairepopup-submit', '', true)
+            .popup-questionnaire__acc-conf
+              include ../components/popup-accept-conf

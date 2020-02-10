@@ -1,0 +1,32 @@
+include ../components/input-field
+include ../buttons/buttons
+
+-
+  var popupFreeTestData = {
+    type: 'tel',
+    id: 'popup-free-test',
+    classModifier: 'popup-free-test input-field--grey-border input-field--popup input-field--64',
+    placeholder: '+7 (___) ___-__-__'
+  }
+
+#popup-free-test.popup-hidden
+  .popup-container
+    .popup
+      .popup__close
+        include ../components/close-btn
+      .free-test.popup-photo
+        .popup-photo__pic-block
+          .popup-photo__name.futpt-demi-24-31 Александр Петров
+          .popup-photo__position.futpt-normal-18-23 Руководитель отдела <br>по внедрению СУП <br>компании Мастер-М
+        .free-test__inner
+          .free-test__title.popup__title 30 дней <br><span class="em-blue">бесплатного теста</span>
+          .free-test__text-block
+            p.free-test__paragraph-1 Предлагаем пилотный проект, в рамках которого мы бесплатно внедрим в вашей компании систему управления печатью.
+            p.free-test__paragraph-2 Вы сможете потестировать все функции <br>в течение месяца без ограничений <br>и лично убедиться в эффективности системы.
+          form(action="" method="post" id="popup-free-test").free-test__form
+            .free-test__phone-field.popup-mb20
+              +input-field(popupFreeTestData)
+            .free-test__submit-btn
+              +turquoise-btn-72-submit('забронировать бесплатный тест', 'free-test-popup-submit', '', true)
+            .free-test__accept-conf
+              include ../components/popup-accept-conf

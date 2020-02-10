@@ -1,0 +1,33 @@
+include ../components/input-field
+include ../buttons/buttons
+
+-
+  var popupGetPresData = {
+    type: 'email',
+    id: 'get-presentation-email',
+    classModifier: 'get-presentation-email input-field--grey-border input-field--popup input-field--64',
+    placeholder: 'Pochta@mail.ru'
+  }
+
+#popup-get-presentation.popup-hidden
+  .popup-container
+    .popup
+      .popup__close
+        include ../components/close-btn
+      .get-presentation
+        .get-presentation__glare(class="lazyBg" data-bg="url('static/images/general/popup-gp-glare.png')")
+        .get-presentation__paper(class="lazyBg" data-bg="url('static/images/general/pgp-paper.png')")
+        a(href="#").get-presentation__pdf
+          +icon('bx_bxs-file-pdf')
+          span 3,4 MB
+        .get-presentation__main
+          .get-presentation__title Укажите вашу почту и <br><span class="em-blue">получите презентацию <br>решения</span> через 1 минуту
+          .get-presentation__subtitle.futpt-normal-24-34-tuna с полным перечнем функций и <br>техническим описанием.
+          form(action="" method="post").get-presentation__form
+            .get-presentation__email-field.popup-mb20
+              +input-field(popupGetPresData)
+            .get-presentation__btn
+              +turquoise-btn-72-submit('получить презентацию', 'get-presentation-popup-submit', '', true)
+            .get-presentation__acc-conf
+              include ../components/popup-accept-conf
+        .get-presentation__paper-2(class="lazyBg" data-bg="url('static/images/general/pgp-paper-2.png')")

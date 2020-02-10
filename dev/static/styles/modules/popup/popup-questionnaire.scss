@@ -1,0 +1,134 @@
+.popup-questionnaire {
+  overflow: hidden;
+  border-radius: 20px;
+
+  position: relative;
+  padding: 108px 0 252px 83px;
+
+  @media (max-width: 1000px) {
+    padding: 103px 28px 486px 28px;
+  }
+
+  &__letter {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 574px;
+    height: 554px;
+    z-index: 5;
+    background-repeat: no-repeat;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+      padding-top: 103.61011%;
+      background-size: 120% auto;
+      background-position: left -76px bottom;
+    }
+
+    @media (max-width: 360px) {
+      background-position: right bottom;
+    }
+  }
+
+  &__glare {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 341px;
+    height: 269px;
+    z-index: 4;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__main {
+    position: relative;
+    z-index: 8;
+  }
+
+  &__title {
+    max-width: 460px;
+
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 110%;
+    color: #333333;
+
+    .em-blue {
+      color: $royal-blue;
+    }
+
+    margin-bottom: 35px;
+
+    @media (max-width: 1000px) {
+      br {display: none}
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: block;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__pdf {
+    cursor: pointer;
+    text-decoration: underline;
+    position: absolute;
+    height: 55px;
+    min-width: 55px;
+
+    min-width: 55px;
+    right: 108px;
+    top: 254px;
+
+    display: flex;
+    align-items: center;
+
+    font-family: 'Futura PT Book';
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+    color: #333333;
+    z-index: 12;
+
+    .icon-mdi_file-excel {
+      flex: 0 0 55px;
+      width: 55px;
+      height: 55px;
+      fill:  #A0C540;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 1000px) {
+      z-index: 30;
+      right: 18.7%;
+      top: 647px;
+    }
+
+    @media (max-width: 360px) {
+      right: 7.2%;
+      top: 720px;
+    }
+  }
+
+  &__form {
+    max-width: 340px;
+  }
+
+  &__btn {
+    margin-bottom: 36px;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 28px;
+    }
+  }
+}

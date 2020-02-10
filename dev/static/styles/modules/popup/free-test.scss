@@ -1,0 +1,54 @@
+.free-test {
+
+  &__inner {
+    width: 58.29146%;
+    padding: 94px 94px 60px 82px;
+
+    @media (max-width: 1000px) {
+      width: 100%;
+      padding: 102px 20px 40px;
+    }
+  }
+
+  &__title {
+    @media (max-width: 1000px) {
+      br {display: none}
+    }
+  }
+
+  &__text-block {
+    padding-top: 20px;
+
+    p {
+      font-family: 'Futura PT Book';
+      font-weight: normal;
+      
+    }
+    margin-bottom: 50px;
+  }
+
+  &__paragraph-1 {
+    color: $tuna;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 130%;
+
+    @media (max-width: 1000px) {
+      font-size: 20px;
+    }
+  }
+
+  &__paragraph-2 {
+    color: #838CA3;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  &__form {
+    padding-right: 6px;
+  }
+
+  &__submit-btn {
+    margin-bottom: 37px;
+  }
+}

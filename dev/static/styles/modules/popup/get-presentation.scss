@@ -1,0 +1,139 @@
+.get-presentation {
+  position: relative;
+  padding: 98px 0 110px 83px;
+
+  @media (max-width: 1000px) {
+    padding: 103px 28px 0 28px;
+  }
+
+  &__glare {
+    width: 512px;
+    height: 254px;
+    position: absolute;
+    top: 0;
+    right: 40px;
+
+    background-repeat: no-repeat;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__paper {
+    position: absolute;
+    width: 510px;
+    height: 465px;
+
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+
+    @media (max-width: 1000px) {
+      // right: auto;
+      display: none;
+    }
+  }
+
+  &__paper-2 {
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: block;
+      width: calc(100%+28px);
+      padding-top: (390/348)*100%;
+
+      background-size: 100%;
+
+      // margin-left: -28px;
+      margin-right: -28px;
+    }
+  }
+
+  &__pdf {
+    cursor: pointer;
+    position: absolute;
+    height: 108px;
+    min-width: 55px;
+    text-decoration: underline;
+
+    right: 340px;
+    bottom: 263px;
+
+    display: flex;
+    align-items: center;
+
+    font-family: 'Futura PT Book';
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+    color: #333333;
+    z-index: 12;
+
+    .icon-bx_bxs-file-pdf {
+      width: 55px;
+      height: 55px;
+      fill:  #EF2D56;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 1000px) {
+      z-index: 30;
+      right: 50%;
+      bottom: 214px;
+    }
+
+    @media (max-width: 360px) {
+      bottom: 160px;
+    }
+  }
+
+  &__main {
+    position: relative;
+    z-index: 20;
+  }
+
+  &__title {
+    font-family: 'Futura PT Demi';
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 110%;
+    color: #333333;
+
+    .em-blue {
+      color: $royal-blue;
+    }
+
+    max-width: 520px;
+    margin-bottom: 35px;
+
+    @media (max-width: 1000px) {
+      br {display: none}
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 420px;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    max-width: 340px;
+    padding-top: 36px;
+
+    @media (max-width: 1000px) {
+      padding-top: 22px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 32px;
+  }
+}
+
+#popup-get-presentation {
+  overflow: hidden;
+}

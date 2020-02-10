@@ -1,9 +1,23 @@
-.popup {
+.popup-hidden {
+  display: none;
+}
 
+.fancybox-content {
+  padding: 0 !important;
+}
+
+.popup {
+  // display: none;
   position: relative;
+
+  height: auto;
   width: 100%;
   background: $white;
   border-radius: 20px;
+
+  @media (max-width: 1000px) {
+    border-radius: 0;
+  }
 
   &__title {
     font-family: 'Futura PT Demi';
@@ -15,14 +29,10 @@
     .em-blue {
       color: $royal-blue;
     }
-  }
 
-  &__subtitle {
-    font-family: 'Futura PT Book';
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 130%;
-    color: #33363E;
+    @media (max-width: 1000px) {
+      font-size: 30px;
+    }
   }
 
   &__close {
@@ -30,6 +40,11 @@
     position: absolute;
     top: 24px;
     right: 28px;
+    z-index: 30;
+
+    @media (max-width: 1000px) {
+      right: 25px;
+    }
   }
 }
 
@@ -39,7 +54,11 @@
 
 .popup-container {
   width: 995px;
-  margin: 0 auto; // temp
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    max-width: 375px;
+  }
 }
 
 .datepicker {
@@ -50,6 +69,14 @@
   margin-bottom: 20px;
 }
 
+.popup-mb42 {
+  margin-bottom: 42px;
+}
+
 @import "choose-time-radio";
 @import "popup-photo";
 @import "time-field";
+@import "free-test";
+@import "find-places";
+@import "get-presentation";
+@import "popup-questionnaire";

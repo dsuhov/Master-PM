@@ -6,9 +6,13 @@ $(document).ready(function() {
     elements_selector: ".lazy"
   });
 
-  if (document.getElementById("page-sectioning")) {
-    console.log("page-sectioning");
+  if (window.matchMedia("(min-width: 769px)").matches) {
+    $('.head-phone, .phone-block__phone').click(evt => {
+      evt.preventDefault();
+    });
   }
+
+  hangPopups();
 
   if (document.getElementById("page-all") ||
       document.getElementById("page-commercial")) {
@@ -22,6 +26,7 @@ $(document).ready(function() {
     // yamapsInit();
     fancyboxInitLogic();
     navLine();
+    scrollToActions();
   }
 
   if (document.getElementById("page-security")) {
@@ -34,6 +39,7 @@ $(document).ready(function() {
     // yamapsInit();
     fancyboxInitLogic();
     navLine();
+    scrollToActions();
   }
 
   if (document.getElementById("page-it")) {
@@ -45,10 +51,12 @@ $(document).ready(function() {
     // yamapsInit();
     fancyboxInitLogic();
     navLine();
+    scrollToActions();
   }
 
   initDatepicker();
   initInputmask();
+  
 });
 
 // Полифилы
@@ -108,7 +116,15 @@ function burgerAction() {
   var burgerContainer = $(".top-line__mobile-nav");
   var burgerContainerMain = $(".top-line-main__mobile-nav");
 
-  burgerElement.addEventListener("click", function() {
+  burgerElement.addEventListener("click",burgerElHandler);
+
+  var burgerContainerStyles = {
+    border: "1px solid #D4DBEF",
+    position: "relative",
+    zIndex: "12"
+  };
+
+  function burgerElHandler() {
     if (this.classList.contains("burger--active")) {
       this.classList.add("burger--reverse");
       headNavEl.classList.remove("head-nav--mobile");
@@ -125,13 +141,14 @@ function burgerAction() {
       burgerContainer.css(burgerContainerStyles);
       burgerContainerMain.css(burgerContainerStyles);
     }
-  });
+  }
 
-  var burgerContainerStyles = {
-    border: "1px solid #D4DBEF",
-    position: "relative",
-    zIndex: "12"
-  };
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    $(headNavEl).find('a').click(() => {
+      burgerElement.click();
+    });
+  }
+  
 }
 
 function economyCardsActions() {
@@ -259,6 +276,11 @@ function modernSoftSlider() {
       });
     });
   });
+
+  dataSliderElement.on('afterChange', (evt, _, currentSlide) => {
+    $(logoControlElements).removeClass('active');
+    $(logoControlElements[currentSlide]).addClass('active');
+  });
 }
 
 function reviewsTabsInit() {
@@ -382,9 +404,32 @@ function fancyboxInitLogic() {
   quizWrapper.classList.add("quizPopup");
   quizWrapper.appendChild(quizCopy);
 
+  // const phoneInput = quizWrapper.querySelector('#quiz-form-copy input[name="telephone"]');
+
+  
+
+  // console.log(ddsg);
+  
+
+  // 
+
   calcPriceBtn.addEventListener("click", () => {
-    $.fancybox.open("<div>" + quizWrapper.innerHTML + "</div>");
+    $.fancybox.open("<div>" + quizWrapper.innerHTML + "</div>", {
+      afterShow: function( instance, current ) {
+        const phoneInput = current.$slide[0].querySelector('input[name="telephone"]')
+        
+        IMask(phoneInput, {
+          mask: '{+7} (000) 000-00-00',
+          lazy: false,
+        });
+
+        validPhone([phoneInput]);
+      }
+    });
   });
+
+
+  
 }
 
 // navigation line
@@ -463,4 +508,103 @@ function initInputmask() {
       lazy: false,
     })
   });
+
+  validPhone(phoneInputs);
+}
+
+function validPhone(inputs) {
+  const regex = /\d+/g;
+
+  // safary fix
+  for (let i = 0; i < inputs.length; i++) {
+    // inputs[i].addEventListener('blur', inputErrHandler);
+    inputs[i].closest('form').querySelector('button[type="submit"]').addEventListener('click', inputErrHandler(inputs[i]));
+    // console.log(inputs[i].closest('form').querySelector('button[type="submit"]'));
+    
+  }
+
+  function checkPhoneValidity(evt) {
+
+  }
+
+  function inputErrHandler(inpEl) {  
+    
+    return (evt) => {
+
+      if (inpEl.value.length !== 18 || isSameNumbers(inpEl.value)) {
+        // evt.preventDefault();
+        inpEl.setCustomValidity('Неверный формат номера!');
+      } else {
+        inpEl.setCustomValidity('');
+      }
+    }
+
+  }
+
+  function isSameNumbers(num) {
+    const digits = num.match(regex).slice(1).join('');
+    
+    if (digits.length !== 10) {
+      return true;
+    }
+
+    return digits.split('').every((el, i, arr) => {
+      
+      if (i > 0) {
+        return arr[i-1] === el;
+      } else {
+        return true;
+      }
+    });
+  }
+}
+
+function hangPopups() {
+  // todo: make btns mapping
+  const btnToPopup = [
+    ['#popup-free-test', ['#free-test', '#rev-block-turquoise-btn', '#next-step-card-30-days-free']],
+    ['#popup-get-presentation', ['.modern-soft__get-presentation']],
+    ['#popup-popup-questionnaire', ['.quiz-form__quiz-list-link']],
+    ['#popup-places', ['#weak-spots-btn', '#next-step-card-order-audit', '#get-audit-btn']],
+    ['#popup-left-phone', ['#next-step-card-get-consult']]
+  ];
+
+  btnToPopup.forEach(pair => {
+
+    pair[1].forEach(button => {
+      
+      $(button).click(() => {
+        
+        $.fancybox.open({
+          src  : pair[0],
+          type : 'inline',
+          closeExisting: false,
+          smallBtn: false,
+          buttons: [],
+        });
+      })
+    })
+  });
+
+  $('.close-btn').click(() => $.fancybox.close());
+}
+
+function scrollToActions() {
+
+  const links = ['.header-logo', '#header-btn', '.head-nav__link'];
+
+  links.forEach(el => {
+    $(el).click(scrollToaction);
+  })
+
+  function scrollToaction(evt) {
+    evt.preventDefault();
+    var scroll_el = $($(this).attr('href'));
+
+    if ($(scroll_el).length != 0) {
+        $('html, body').animate({
+            scrollTop: $(scroll_el).offset().top
+        }, 800);
+    }
+  }
 }

@@ -7,3 +7,23 @@ mixin input-field(inpFieldData)
         name='telephone'
         class=`input-field input-field--${inpFieldData.classModifier}`
       )
+  if inpFieldData.type === 'name'
+    .input-field-block
+      input(
+        type="text"
+        id=`${inpFieldData.id}`
+        name='username',
+        placeholder=""+inpFieldData.placeholder
+        class=`input-field input-field--${inpFieldData.classModifier}`
+        autocomplete="off"
+      )
+  if inpFieldData.type === 'email'
+    .input-field-block
+      input(
+        type="email"
+        id=`${inpFieldData.id}`
+        name='email'
+        placeholder=""+inpFieldData.placeholder
+        class=`input-field input-field--${inpFieldData.classModifier}`
+        autocomplete="off"
+      )

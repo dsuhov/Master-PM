@@ -1,0 +1,123 @@
+// find-places
+.popup-places {
+  padding: 75px 80px 70px 70px;
+
+  @media (max-width: 1000px) {
+    padding: 104px 28px 55px 28px;
+  }
+
+  &__title {
+    max-width: 550px;
+
+    @media (max-width: 1000px) {
+      br {display: none}
+    }
+  }
+  
+
+  &__main {
+    display: flex;
+    padding-top: 43px;
+
+    @media (max-width: 1000px) {
+      display: block;
+      padding-top: 24px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 50px;
+
+    @media (max-width: 720px) {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__col {
+    
+    &:first-child {
+      flex: 0 1 53%;
+      width: 53%;
+      border-right: 1px solid #D4DBEF;
+
+      @media (max-width: 1000px) {
+        width: 100%;
+        border-right: 0;
+      }
+    }
+
+    &:last-child {
+      flex: 0 1 47%;
+      width: 47%;
+      padding-left: 58px;
+      padding-top: 6px;
+
+      @media (max-width: 1000px) {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 34px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    p {
+      max-width: 280px;
+
+      @media (max-width: 720px) {
+        br {display: none}
+      }
+    }
+
+    @media (max-width: 720px) {
+      align-items: center;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 76px;
+    width: 76px;
+    height: 76px;
+    border: 1px solid #E8EEFF;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 36px;
+
+    .svg-sprite-icon {
+      width: 40px;
+      height: 40px;
+      fill: $royal-blue;
+    }
+
+    @media (max-width: 720px) {
+      margin-right: 28px;
+    }
+  }
+
+  &__faint-title {
+    font-family: 'Futura PT Book';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+    color: #838CA3;
+    margin-bottom: 40px;
+
+    @media (max-width: 720px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    // padding-top: 20px;
+  }
+}

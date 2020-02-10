@@ -127,6 +127,7 @@
   border: 1px solid #D4DBEF;
   box-sizing: border-box;
   border-radius: 50%;
+  padding-left: 1px;
 
   display: flex;
   justify-content: center;
@@ -143,8 +144,8 @@
   }
 
   @media (max-width: 360px) {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 
     svg {
       width: 12px;

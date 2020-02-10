@@ -1,0 +1,40 @@
+include ../components/input-field
+include ../buttons/buttons
+
+-
+  var popupPlacesData = {
+    type: 'tel',
+    id: 'popup-places-phone',
+    classModifier: 'popup-places input-field--grey-border input-field--popup input-field--64',
+    placeholder: '+7 (___) ___-__-__'
+  }
+
+#popup-places.popup-hidden
+  .popup-container
+    .popup
+      .popup__close
+        include ../components/close-btn
+      .popup-places
+        .popup-places__title.popup__title <span class="em-blue">Найдем уязвимые места</span> <br>в вашей инфраструктуре <br>печати и поможем закрыть их
+        .popup-places__main
+          .popup-places__col
+            .popup-places__subtitle.futpt-normal-24-34-tuna Вы получите аудит инфраструктуры <br>печати вашей компании по 78 <br>параметрам. Вы получите:
+            .popup-places__item.popup-mb42
+              .popup-places__icon
+                +icon('data-security')
+              p.futpt-normal-18-25-tuna Правила печати в организации, которые помогут надежно защитить конфиденциальные документы.
+            .popup-places__item
+              .popup-places__icon
+                +icon('paper')
+              p.futpt-normal-18-25-tuna Рекомендации по снижению издержек печати: сокращение парка техники, ограничение цветности, перенос бумажных документов в электронные форматы
+          .popup-places__col
+            .popup-places__faint-title Оставьте свой телефон, чтобы мы могли <br>перезвонить вам и договориться об <br>удобном времени аудита.
+            form(action="" method="post").popup-places__form
+              .popup-places__name-field.popup-mb20
+                +input-field({type: 'name', id: 'popup-places-name', placeholder: 'Как вас зовут?', classModifier: 'popup-places-name input-field--grey-border input-field--popup input-field--64'})
+              .popup-places__phone.popup-mb20
+                +input-field(popupPlacesData)
+              .popup-places__btn
+                +turquoise-btn-72-submit('забронировать бесплатный тест', 'popup-places-popup-submit', '', true)
+              .popup-places__accept-conf
+                include ../components/popup-accept-conf

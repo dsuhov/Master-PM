@@ -41,7 +41,7 @@ mixin rev-block-slide(data)
                     +icon('check')
                   .revies-tab-item__text!= tabItem
 
-.reviews
+.reviews#projects
   .container
     .reviews__content
       .reviews__top
@@ -118,3 +118,4 @@ mixin rev-block-slide(data)
                   .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
         .reviews__more
           button(type="button" id="show-more-remivews") Показать еще
+            +icon('sh-more')

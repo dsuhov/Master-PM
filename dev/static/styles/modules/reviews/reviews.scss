@@ -39,6 +39,19 @@
       text-transform: uppercase;
       text-align: center;
       color: $royal-blue;
+
+      .icon-sh-more {
+        display: inline;
+        width: 11px;
+        height: 7px;
+        fill: $royal-blue;
+        margin-bottom: 2px;
+        margin-left: 2px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
