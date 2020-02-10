@@ -49,11 +49,15 @@
     margin-right: 14px;
   }
 
-  @media (min-width: 769px) {
-    cursor: initial;
-  }
-
   @media (max-width: 400px) {
+    margin-right: 0;
+  }
+}
+
+#page-sectioning .head-phone {
+  margin-right: 0;
+
+  .head-phone__icon {
     margin-right: 0;
   }
 }

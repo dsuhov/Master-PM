@@ -47,10 +47,6 @@ mixin rev-block-slide(data)
       .reviews__top
         .reviews-top
           .reviews-top__title.futpt-demi-50-55.futpt-demi-50-55--white Мастер-РМ уже помог повысить эффективность печати 89 компаниям
-          .reviews-top__over-line
-            .reviews-top__over-item Сократить расходы
-            .reviews-top__over-item Защитить данные
-            .reviews-top__over-item Оптимизировать печать
           .reviews-top__rev-block.rev-block
             .rev-block__nav-arrows
               .rev-block__nav-arrows-prev
@@ -75,47 +71,67 @@ mixin rev-block-slide(data)
               .rev-block__btn-line
                 .rev-block__turquoise-btn
                   +turquoise-btn-72('хочу также', 'rev-block-turquoise-btn', '', 'true')
-                button.rev-block__light-btn.gilroy-norm-16-26-tuna Подробнее о проекте
-      .reviews__bottom
-        .audio-cards.reviews__audio-cards
-          .audio-cards__title.futpt-demi-50-55.futpt-demi-50-55--white 9 из 10 клиентов приходят к нам по рекомендации партнеров
-          .audio-cards__subtitle.futpt-normal-32-38 Мы позвонили нашим заказчикам и взяли отзыв по телефону
-          .audio-cards__cards
-            .audio-cards__column
-              .audio-cards__card.audio-card(data-aos="fade-up")
-                .audio-card__logo
-                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/avon.png" alt="Avon").audio-card__logo-pic.lazyBg
-                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
-                .audio-card__author
-                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
-                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
-              .audio-cards__card.audio-card(data-aos="fade-up")
-                .audio-card__logo
-                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/kredeurope.png" alt="Avon").audio-card__logo-pic.lazyBg
-                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
-                .audio-card__author
-                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
-                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
-            // audio-cards column 2
-            .audio-cards__column
-              .audio-cards__card.audio-card(data-aos="fade-up")
-                .audio-card__logo
-                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/ashan.png" alt="Avon").audio-card__logo-pic.lazyBg
-                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
-                //- .audio-card__player
-                  //- audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
-                .audio-card__author
-                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
-                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
-              .audio-cards__card.audio-card(data-aos="fade-up")
-                .audio-card__logo
-                  img(src="static/images/general/empty.png" data-src="static/images/audio-cards/ww.png" alt="Avon").audio-card__logo-pic.lazyBg
-                p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
-                //- .audio-card__player
-                  //- audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
-                .audio-card__author
-                  .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
-                  .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+                //- button.rev-block__light-btn.gilroy-norm-16-26-tuna Подробнее о проекте
+      //- .reviews__bottom
+      //-   .audio-cards.reviews__audio-cards
+      //-     .audio-cards__title.futpt-demi-50-55.futpt-demi-50-55--white 9 из 10 клиентов приходят к нам по рекомендации партнеров
+      //-     .audio-cards__subtitle.futpt-normal-32-38 Мы позвонили нашим заказчикам и взяли отзыв по телефону
+      //-     .audio-cards__cards
+      //-       .audio-cards__column
+      //-         // audio-card
+      //-         .audio-cards__card.audio-card(data-aos="fade-up").show
+      //-           .audio-card__logo
+      //-             img(src="static/images/general/empty.png" data-src="static/images/audio-cards/avon.png" alt="Avon").audio-card__logo-pic.lazyBg
+      //-           p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+      //-           .audio-card__author
+      //-             .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+      //-             .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+      //-         // audio-card
+      //-         .audio-cards__card.audio-card(data-aos="fade-up").show
+      //-           .audio-card__logo
+      //-             img(src="static/images/general/empty.png" data-src="static/images/audio-cards/kredeurope.png" alt="Avon").audio-card__logo-pic.lazyBg
+      //-           p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+      //-           .audio-card__author
+      //-             .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+      //-             .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+      //-         .audio-cards__card.audio-card(data-aos="fade-up")
+      //-           .audio-card__logo
+      //-             img(src="static/images/general/empty.png" data-src="static/images/audio-cards/kredeurope.png" alt="Avon").audio-card__logo-pic.lazyBg
+      //-           p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+      //-           .audio-card__author
+      //-             .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+      //-             .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+      //-       // audio-cards column 2
+      //-       .audio-cards__column
+      //-         .audio-cards__card.audio-card(data-aos="fade-up").show
+      //-           .audio-card__logo
+      //-             img(src="static/images/general/empty.png" data-src="static/images/audio-cards/ashan.png" alt="Avon").audio-card__logo-pic.lazyBg
+      //-           p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+      //-           //- .audio-card__player
+      //-             //- audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
+      //-           .audio-card__author
+      //-             .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+      //-             .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+      //-         // audio-card
+      //-         .audio-cards__card.audio-card(data-aos="fade-up").show
+      //-           .audio-card__logo
+      //-             img(src="static/images/general/empty.png" data-src="static/images/audio-cards/ww.png" alt="Avon").audio-card__logo-pic.lazyBg
+      //-           p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+      //-           //- .audio-card__player
+      //-             //- audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
+      //-           .audio-card__author
+      //-             .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+      //-             .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
+      //-         // audio-card
+      //-         .audio-cards__card.audio-card(data-aos="fade-up")
+      //-           .audio-card__logo
+      //-             img(src="static/images/general/empty.png" data-src="static/images/audio-cards/ww.png" alt="Avon").audio-card__logo-pic.lazyBg
+      //-           p.audio-card__text.futpt-normal-18-25-tuna <span>"</span>После внедрения системы управления печатью от компании "Мастер-РМ" мы снизили расходы на печать примерно на 15%. А еще уволили лишнего админа, который стал не нужен.
+      //-           //- .audio-card__player
+      //-             //- audio(src="static/audifiles/audio.mp3" controls class="op-player op-player__media")
+      //-           .audio-card__author
+      //-             .audio-card__name.futpt-demi-24-34-tuna Иван Иванов
+      //-             .audio-card__position.futpt-normal-18-25-tuna Директор IT-отдела AVON
         .reviews__more
           button(type="button" id="show-more-remivews") Показать еще
             +icon('sh-more')

@@ -45,6 +45,10 @@
     @media (max-width: 1280px) {
       margin-left: auto;
     }
+
+    &.top-line__phone--index {
+      margin-left: auto;
+    }
   }
 }
 
@@ -57,8 +61,8 @@
     margin-left: auto;
     margin-right: 34px;
 
-    @media (max-width: 400px) {
-      margin: 0;
+    @media (max-width: 1280px) {
+      margin: 0 auto;
     }
   }
 

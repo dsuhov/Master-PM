@@ -24,12 +24,18 @@
       padding: 19px 30px 0 30px;
     }
 
+    &.hiding {
+      animation: showNavLineRev 0.2s linear !important;
+    }
+
     &.floating {
       position: fixed;
       z-index: 100;
       display: flex;
       align-items: center;
-      top: 0;
+      top: -104px;
+      animation: showNavLine 0.2s linear forwards;
+
       left: 0;
       right: 0;
       padding: 0 60px 0 68px;
@@ -83,10 +89,7 @@
       }
 
       .faint-border-btn.faint-border-btn--64 {
-        border: 2px solid #E8EEFF;
-        color: $royal-blue;
-        background: transparent;
-        box-shadow: none;
+        color: $white;
       }
 
       .head-phone {
@@ -105,6 +108,7 @@
       }
     }
   }
+  // End Header havigation
 
   &__main {
     padding-top: 98px;
@@ -201,3 +205,23 @@
   }
 }
 
+@keyframes showNavLine {
+  0% {
+    top: -104px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes showNavLineRev {
+  0% {
+    top: 0;
+  }
+
+  100% {
+
+    top: -104px;
+  }
+}

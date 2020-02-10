@@ -81,7 +81,7 @@
 
   &__pdf {
     cursor: pointer;
-    text-decoration: underline;
+    &:hover {text-decoration: underline;}
     position: absolute;
     height: 55px;
     min-width: 55px;

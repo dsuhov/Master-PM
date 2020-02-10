@@ -10,18 +10,17 @@ include ../buttons/buttons
   }
 
 #popup-get-presentation.popup-hidden
-  .popup-container
     .popup
       .popup__close
         include ../components/close-btn
       .get-presentation
-        .get-presentation__glare(class="lazyBg" data-bg="url('static/images/general/popup-gp-glare.png')")
-        .get-presentation__paper(class="lazyBg" data-bg="url('static/images/general/pgp-paper.png')")
-        a(href="#").get-presentation__pdf
-          +icon('bx_bxs-file-pdf')
-          span 3,4 MB
+        //- .get-presentation__glare(class="lazyBg" data-bg="url('static/images/general/popup-gp-glare.png')")
+        //- .get-presentation__paper(class="lazyBg" data-bg="url('static/images/general/pgp-paper.png')")
+        //- a(href="#").get-presentation__pdf
+        //-   +icon('bx_bxs-file-pdf')
+        //-   span 3,4 MB
         .get-presentation__main
-          .get-presentation__title Укажите вашу почту и <br><span class="em-blue">получите презентацию <br>решения</span> через 1 минуту
+          .get-presentation__title Укажите вашу почту и <br><span class="em-blue">получите презентацию <br>решения</span> в течение часа
           .get-presentation__subtitle.futpt-normal-24-34-tuna с полным перечнем функций и <br>техническим описанием.
           form(action="" method="post").get-presentation__form
             .get-presentation__email-field.popup-mb20

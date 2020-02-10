@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 400px) {
+    @media (max-width: 750px) {
       display: block;
     }
 
@@ -43,12 +43,21 @@
     flex: 0 0 243px;
     max-width: 243px;
 
-    @media (max-width: 400px) {
-      max-width: 100%;
+    @media (max-width: 750px) {
+      max-width: 50%;
+      margin: 0 auto;
 
       &:not(:last-child) {
         margin-bottom: 20px;
       }
+    }
+
+    @media (max-width: 560px) {
+      max-width: 90%;
+    }
+
+    @media (max-width: 400px) {
+      max-width: 100%;
     }
   }
 

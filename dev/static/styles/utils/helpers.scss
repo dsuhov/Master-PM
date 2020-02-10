@@ -132,6 +132,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 30;
 
   svg {
     transition: transform 0.3s;
@@ -152,4 +153,8 @@
       height: 12px;
     }
   }
+}
+
+.fancybox-content {
+  overflow: visible !important;
 }

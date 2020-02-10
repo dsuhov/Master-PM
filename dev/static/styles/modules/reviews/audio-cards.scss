@@ -53,6 +53,11 @@
 
   &__card {
     width: 570px;
+    display: none;
+
+    &.show {
+      display: block;
+    }
 
     &:not(:last-child) {
       margin-bottom: 60px;

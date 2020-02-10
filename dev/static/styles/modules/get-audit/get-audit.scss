@@ -12,7 +12,8 @@
   }
 
   @media (max-width: 400px) {
-    padding: 37px 39px 520px;
+    padding: 37px 39px 310px;
+    margin-bottom: 180px;
   }
 
   &__main {
@@ -71,10 +72,15 @@
     }
 
     @media (max-width: 768px) {
+      display: none;
+    }
+
+    @media (max-width: 400px) {
+      display: block;
       width: 136%;
       right: auto;
       top: auto;
-      bottom: -8px;
+      bottom: -228px;
       left: -22%;
     }
   }

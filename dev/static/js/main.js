@@ -6,9 +6,19 @@ $(document).ready(function() {
     elements_selector: ".lazy"
   });
 
+  // Remove phone app action on desktop
   if (window.matchMedia("(min-width: 769px)").matches) {
     $('.head-phone, .phone-block__phone').click(evt => {
       evt.preventDefault();
+
+      $.fancybox.open({
+        src  : '#popup-left-phone',
+        type : 'inline',
+        closeExisting: true,
+        smallBtn: false,
+        buttons: [],
+        autoFocus: false,
+      });
     });
   }
 
@@ -56,7 +66,7 @@ $(document).ready(function() {
 
   initDatepicker();
   initInputmask();
-  
+  // reviewsShowMore();
 });
 
 // Полифилы
@@ -143,7 +153,7 @@ function burgerAction() {
     }
   }
 
-  if (window.matchMedia("(max-width: 768px)").matches) {
+  if (window.matchMedia("(max-width: 1280px)").matches) {
     $(headNavEl).find('a').click(() => {
       burgerElement.click();
     });
@@ -260,7 +270,8 @@ function modernSoftSlider() {
     draggable: false,
     accessibility: false,
     swipeToSlide: false,
-    touchMove: false
+    touchMove: false,
+    adaptiveHeight: true
   };
 
   sliderElement.slick(slickParams);
@@ -276,6 +287,11 @@ function modernSoftSlider() {
       });
     });
   });
+
+  // dataSliderElement.on('afterChange', (evt, _, currentSlide) => {
+  //   $(logoControlElements).removeClass('active');
+  //   $(logoControlElements[currentSlide]).addClass('active');
+  // });
 
   dataSliderElement.on('afterChange', (evt, _, currentSlide) => {
     $(logoControlElements).removeClass('active');
@@ -391,10 +407,7 @@ function yamapsInit() {
 
 // Fancybox
 function fancyboxInitLogic() {
-  // Set fancybox close btn
-  $.fancybox.defaults.btnTpl.smallBtn =
-    '<button type="button" data-fancybox-close class="close-btn" title="{{CLOSE}}"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292969 13.293L13.293 0.292969L14.7072 1.70718L1.70718 14.7072L0.292969 13.293Z" fill="#2F7EEF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.707 13.293L1.70703 0.292969L0.292818 1.70718L13.2928 14.7072L14.707 13.293Z" fill="#2F7EEF"/></svg></button>';
-
+  const headerBtn = document.getElementById('header-btn');
   // Open quiz on Calc Price Button
   const calcPriceBtn = document.getElementById("ms-calc-price");
   const quizCopy = document.getElementById("quiz-form").cloneNode(true);
@@ -404,16 +417,12 @@ function fancyboxInitLogic() {
   quizWrapper.classList.add("quizPopup");
   quizWrapper.appendChild(quizCopy);
 
-  // const phoneInput = quizWrapper.querySelector('#quiz-form-copy input[name="telephone"]');
 
   
 
-  // console.log(ddsg);
-  
-
-  // 
-
-  calcPriceBtn.addEventListener("click", () => {
+  const quizPopuphandler = e => {
+    e.preventDefault();
+    
     $.fancybox.open("<div>" + quizWrapper.innerHTML + "</div>", {
       afterShow: function( instance, current ) {
         const phoneInput = current.$slide[0].querySelector('input[name="telephone"]')
@@ -424,12 +433,32 @@ function fancyboxInitLogic() {
         });
 
         validPhone([phoneInput]);
-      }
+
+        current.$slide[0].querySelector('.quiz-form__quiz-list-link').addEventListener('click', e => {
+          e.preventDefault();
+
+          $.fancybox.open({
+            src  : '#popup-popup-questionnaire',
+            type : 'inline',
+            closeExisting: true,
+            hideScrollbar: false,
+            smallBtn: false,
+            buttons: [],
+            autoFocus: false,
+            touch: {
+              vertical: true
+            }
+          });
+        })
+      },
+      smallBtn: false,
+      autoFocus: false,
+      hideScrollbar: false,
     });
-  });
+  }
 
-
-  
+  calcPriceBtn.addEventListener("click", quizPopuphandler);
+  headerBtn.addEventListener("click", quizPopuphandler);
 }
 
 // navigation line
@@ -439,14 +468,20 @@ function navLine() {
   const headerEl = document.querySelector(".header");
 
   window.addEventListener("scroll", evt => {
-    if (window.pageYOffset > 0 && !scrollActive) {
+    if (window.pageYOffset > 1000 && !scrollActive) {
       scrollActive = true;
       navLine.classList.add("floating");
       headerEl.classList.add("floating");
-    } else if (window.pageYOffset === 0 && scrollActive) {
+    } else if (window.pageYOffset <= 1000 && scrollActive) {
       scrollActive = false;
-      navLine.classList.remove("floating");
-      headerEl.classList.remove("floating");
+      navLine.classList.add("hiding");
+
+      setTimeout(() => {
+        navLine.classList.remove("floating");
+        navLine.classList.remove("hiding");
+        headerEl.classList.remove("floating");
+      }, 220);
+
     }
   });
 }
@@ -502,7 +537,6 @@ function initInputmask() {
   const phoneInputs = document.querySelectorAll('input[name="telephone"]');
 
   [...phoneInputs].forEach(el => {
-    // el.setAttribute('value', '+7 ');
     IMask(el, {
       mask: '{+7} (000) 000-00-00',
       lazy: false,
@@ -517,14 +551,10 @@ function validPhone(inputs) {
 
   // safary fix
   for (let i = 0; i < inputs.length; i++) {
-    // inputs[i].addEventListener('blur', inputErrHandler);
-    inputs[i].closest('form').querySelector('button[type="submit"]').addEventListener('click', inputErrHandler(inputs[i]));
-    // console.log(inputs[i].closest('form').querySelector('button[type="submit"]'));
-    
-  }
-
-  function checkPhoneValidity(evt) {
-
+    inputs[i]
+        .closest('form')
+        .querySelector('button[type="submit"]')
+        .addEventListener('click', inputErrHandler(inputs[i]));
   }
 
   function inputErrHandler(inpEl) {  
@@ -532,7 +562,6 @@ function validPhone(inputs) {
     return (evt) => {
 
       if (inpEl.value.length !== 18 || isSameNumbers(inpEl.value)) {
-        // evt.preventDefault();
         inpEl.setCustomValidity('Неверный формат номера!');
       } else {
         inpEl.setCustomValidity('');
@@ -548,6 +577,10 @@ function validPhone(inputs) {
       return true;
     }
 
+    if (digits === '1234567890') {
+      return true;
+    }
+
     return digits.split('').every((el, i, arr) => {
       
       if (i > 0) {
@@ -560,7 +593,6 @@ function validPhone(inputs) {
 }
 
 function hangPopups() {
-  // todo: make btns mapping
   const btnToPopup = [
     ['#popup-free-test', ['#free-test', '#rev-block-turquoise-btn', '#next-step-card-30-days-free']],
     ['#popup-get-presentation', ['.modern-soft__get-presentation']],
@@ -573,7 +605,8 @@ function hangPopups() {
 
     pair[1].forEach(button => {
       
-      $(button).click(() => {
+      $(button).click((evt) => {
+        evt.preventDefault();
         
         $.fancybox.open({
           src  : pair[0],
@@ -581,6 +614,11 @@ function hangPopups() {
           closeExisting: false,
           smallBtn: false,
           buttons: [],
+          autoFocus: false,
+          touch: {
+            vertical: true,
+            momentum: false
+          }
         });
       })
     })
@@ -591,7 +629,7 @@ function hangPopups() {
 
 function scrollToActions() {
 
-  const links = ['.header-logo', '#header-btn', '.head-nav__link'];
+  const links = ['.header-logo', '.head-nav__link'];
 
   links.forEach(el => {
     $(el).click(scrollToaction);
@@ -608,3 +646,23 @@ function scrollToActions() {
     }
   }
 }
+
+// Show More Actions
+// function reviewsShowMore() {
+//   const showMoreBtn = document.getElementById('show-more-remivews');
+//   const cardsConts = document.querySelectorAll('.audio-cards__column');
+//   const audioCards = [
+//     filterShown(cardsConts[0].querySelectorAll('.audio-cards__card')),
+//     filterShown(cardsConts[1].querySelectorAll('.audio-cards__card'))
+//   ];
+//
+//   console.log(audioCards);
+//
+//
+//   function filterShown(nList) {
+//     return Array.from(nList).filter(el => {
+//       console.log(el)
+//       return !el.classList.contains('show');
+//     })
+//   }
+// }

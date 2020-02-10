@@ -1,31 +1,38 @@
 .modern-soft {
   // temporary height?
-  min-height: 1294px;
-  background: url('../images/general/modern-soft-bg.svg')no-repeat;
+  // min-height: 1294px;
+  background: url('../images/general/modern-soft-bg.svg') no-repeat;
   background-position: left top;
   background-size: auto;
 
   position: relative;
-  padding-top: 295px;
+  padding-top: 160px;
   padding-left: 10px;
+  padding-bottom: 100px;
 
   @media (max-width: 1440px) {
-    background: url('../images/general/modern-soft-bg-2.svg') top left / auto no-repeat;
+    padding-top: 100px;
+    background: url('../images/general/modern-soft-bg-2.svg') left top -50px / auto no-repeat;
   }
 
   @media (max-width: 950px) {
-    background: url('../images/general/modern-soft-bg_mobile.svg') bottom left / 100% auto no-repeat;
+    background: url(../images/general/modern-soft-bg_mobile.svg) center top -50px/100% 100% no-repeat;
     padding-top: 150px;
     padding-left: 0;
     padding-bottom: 90px;
   }
 
   @media (max-width: 360px) {
-    background: url('../images/general/modern-soft-bg_mobile.svg') bottom left / 120% auto no-repeat;
+    padding-top: 100px;
+    background: url(../images/general/modern-soft-bg_mobile.svg) center top -50px/100% 100% no-repeat;
   }
 
   &__btns {
     max-width: 287px;
+
+    @media (max-width: 400px) {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -64,6 +71,8 @@
       transform: none;
       margin: 0 auto;
       margin-bottom: 34px;
+
+      display: none;
     }
 
     @media (max-width: 400px) {
@@ -190,19 +199,19 @@
     }
   }
 
-  &__arrows {
-    display: none;
+  // &__arrows {
+  //   display: none;
 
-    &-prev {
-      margin-left: 2px;
-      margin-right: 7px;
-    }
+  //   &-prev {
+  //     margin-left: 2px;
+  //     margin-right: 7px;
+  //   }
 
-    @media (max-width: 950px) {
-      display: flex;
-      margin-bottom: 22px;
-    }
-  }
+  //   @media (max-width: 950px) {
+  //     display: flex;
+  //     margin-bottom: 22px;
+  //   }
+  // }
 }
 
 
@@ -228,11 +237,6 @@
         margin-bottom: 29px;
       }
     }
-
-    
-  }
-
-  &__paragraphs {
 
     
   }
