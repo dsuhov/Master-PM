@@ -127,6 +127,7 @@
     display: flex;
     align-items: center;
     padding-left: (392/973)*100%;
+    padding-top: 70px;
 
     @media (max-width: 750px) {
       flex-direction: column;

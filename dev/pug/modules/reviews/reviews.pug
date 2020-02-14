@@ -14,32 +14,32 @@ mixin rev-block-slide(data)
           span!= data.implementationPeriod[1]
         .rev-block-slide__tabs.reviews-slide-tabs
           // tab-block
-          .reviews-slide-tabs__block(data-tab="0").reviews-slide-tabs__block--1.reviews-slide-tabs__block--active.reviews-slide-tabs__block--open
-            .reviews-slide-tabs__btn Задача
-            .reviews-slide-tabs__content
-              each tabItem in data.tabs.task
-                .revies-tab-item
-                  .revies-tab-item__icon
-                    +icon('check')
-                  .revies-tab-item__text!= tabItem
+          //- .reviews-slide-tabs__block.reviews-slide-tabs__block--1.reviews-slide-tabs__block--active.reviews-slide-tabs__block--open
+          .reviews-slide-tabs__btn(data-tab="0").reviews-slide-tabs__btn--1.reviews-slide-tabs__btn--active Задача
+          .reviews-slide-tabs__content
+            each tabItem in data.tabs.task
+              .revies-tab-item
+                .revies-tab-item__icon
+                  +icon('check')
+                .revies-tab-item__text!= tabItem
           // tab-block
-          .reviews-slide-tabs__block(data-tab="1").reviews-slide-tabs__block--2
-            .reviews-slide-tabs__btn Решение
-            .reviews-slide-tabs__content
-              each tabItem in data.tabs.solution
-                .revies-tab-item
-                  .revies-tab-item__icon
-                    +icon('check')
-                  .revies-tab-item__text!= tabItem
+          //- .reviews-slide-tabs__block.reviews-slide-tabs__block--2
+          .reviews-slide-tabs__btn(data-tab="1").reviews-slide-tabs__btn--2 Решение
+          .reviews-slide-tabs__content
+            each tabItem in data.tabs.solution
+              .revies-tab-item
+                .revies-tab-item__icon
+                  +icon('check')
+                .revies-tab-item__text!= tabItem
           // tab-block
-          .reviews-slide-tabs__block(data-tab="2").reviews-slide-tabs__block--3
-            .reviews-slide-tabs__btn Результат
-            .reviews-slide-tabs__content
-              each tabItem in data.tabs.result
-                .revies-tab-item
-                  .revies-tab-item__icon
-                    +icon('check')
-                  .revies-tab-item__text!= tabItem
+          //- .reviews-slide-tabs__block.reviews-slide-tabs__block--3
+          .reviews-slide-tabs__btn(data-tab="2").reviews-slide-tabs__btn--3 Результат
+          .reviews-slide-tabs__content
+            each tabItem in data.tabs.result
+              .revies-tab-item
+                .revies-tab-item__icon
+                  +icon('check')
+                .revies-tab-item__text!= tabItem
 
 .reviews#projects
   .container

@@ -302,50 +302,32 @@ function modernSoftSlider() {
 function reviewsTabsInit() {
   const tabsContainer = $(".reviews-slide-tabs");
 
-  if (window.matchMedia("(max-width: 950px)").matches) {
-    $(
-      ".reviews-slide-tabs__block--1.reviews-slide-tabs__block--open .reviews-slide-tabs__content"
-    ).slideDown();
-  }
+  tabsContainer.each(function(i) {
+    if (window.matchMedia("(max-width: 950px)").matches) {
+      $(tabsContainer[i]).find('.reviews-slide-tabs__btn:first-of-type').addClass("reviews-slide-tabs__btn--open");
+      $(tabsContainer[i]).find('.reviews-slide-tabs__btn:first-of-type + .reviews-slide-tabs__content').slideToggle();
+    }
 
-  tabsContainer.each(function(_) {
-    $(tabsContainer[_])
-      .find(".reviews-slide-tabs__block")
-      .each(function(el) {
-        $(this)
+    $(tabsContainer[i]).find('.reviews-slide-tabs__btn').each(function() {
+      this.addEventListener('click', () => {
+        if (window.matchMedia("(max-width: 950px)").matches) {
+          if ($(this).hasClass("reviews-slide-tabs__btn--open")) {
+            $(this).removeClass("reviews-slide-tabs__btn--open");
+          } else {
+            $(this).addClass("reviews-slide-tabs__btn--open");
+          }
+          $(this).next().slideToggle();
+        } else {
+          $(this)
+          .closest(".reviews-slide-tabs")
           .find(".reviews-slide-tabs__btn")
-          .each(function() {
-            this.addEventListener("click", () => {
-              if (window.matchMedia("(max-width: 950px)").matches) {
-                $(this)
-                  .next()
-                  .slideToggle();
-
-                if (
-                  $(this)
-                    .parent()
-                    .hasClass("reviews-slide-tabs__block--open")
-                ) {
-                  $(this)
-                    .parent()
-                    .removeClass("reviews-slide-tabs__block--open");
-                } else {
-                  $(this)
-                    .parent()
-                    .addClass("reviews-slide-tabs__block--open");
-                }
-              } else {
-                $(this)
-                  .closest(".reviews-slide-tabs")
-                  .find(".reviews-slide-tabs__block")
-                  .removeClass("reviews-slide-tabs__block--active");
-                $(this)
-                  .parent()
-                  .addClass("reviews-slide-tabs__block--active");
-              }
-            });
-          });
-      });
+          .removeClass("reviews-slide-tabs__btn--active");
+          $(this).addClass("reviews-slide-tabs__btn--active");
+        }
+        
+      })
+    });
+    
   });
 }
 

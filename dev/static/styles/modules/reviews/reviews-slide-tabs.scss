@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 
   @media (max-width: 950px) {
     position: static;
@@ -21,7 +22,7 @@
     }
   }
 
-  &__block &__content {
+  &__content {
     display: none;
   }
 
@@ -34,8 +35,10 @@
     color: $tuna;
     padding: 14px 0;
     text-align: center;
+    width: 33.33333%;
     
     @media (max-width: 950px) {
+      width: 100%;
       padding: (62px-26px)/2 28px ;
       text-align: left;
       position: relative;
@@ -58,7 +61,7 @@
     }
   }
 
-  &__block.reviews-slide-tabs__block--open &__btn {
+  &__btn.reviews-slide-tabs__btn--open {
     @media (max-width: 950px) {
       &::after {
         transform: translateY(-4px) rotate(0deg);
@@ -67,8 +70,7 @@
   }
 
   &__content {
-    position: absolute;
-    top: 96px;
+    padding-top: 45px;
     left: 0;
     width: 100%;
 
@@ -90,7 +92,9 @@
     }
   }
 
-  &__block--1 &__btn {
+  &__btn--1 {
+    order: 1;
+
     border: 1px solid #DBEAFF;
     border-radius: 20px 0 0 20px;
 
@@ -102,7 +106,13 @@
     }
   }
 
-  &__block--2 &__btn {
+  &__btn--1 + &__content {
+    order: 4;
+  }
+
+  &__btn--2 {
+    order: 2;
+
     border: none;
     border-top: 1px solid #DBEAFF;
     border-bottom: 1px solid #DBEAFF;
@@ -113,7 +123,12 @@
     }
   }
 
-  &__block--3 &__btn {
+  &__btn--2 + &__content {
+    order: 5;
+  }
+
+  &__btn--3 {
+    order: 3;
 
     border: 1px solid #DBEAFF;
     border-radius: 0 20px 20px 0;
@@ -127,7 +142,11 @@
     }
   }
 
-  &__block.reviews-slide-tabs__block--active &__btn,
+  &__btn--3 + &__content {
+    order: 6;
+  }
+
+  &__btn.reviews-slide-tabs__btn--active,
   &__btn:hover {
     border-color: $royal-blue;
     background-color: $royal-blue;
@@ -140,7 +159,11 @@
     }
   }
 
-  &__block.reviews-slide-tabs__block--active &__content {
+  &__btn.reviews-slide-tabs__btn--active + &__content {
+    display: block;
+  }
+
+  &__btn.reviews-slide-tabs__btn--active + &__content {
     display: block;
 
     @media (max-width: 950px) {
