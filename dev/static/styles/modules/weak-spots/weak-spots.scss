@@ -121,6 +121,7 @@
 
   &__click-btn {
     position: absolute;
+    z-index: 30;
     bottom: -40px;
     width: (230/343)*100%;
     left: (100%/2)*(1-(230/343));
